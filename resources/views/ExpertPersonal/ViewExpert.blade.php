@@ -62,7 +62,7 @@
                                     NAME
                                 </td>
                                 <td> 
-                                    <textarea name="expertName" id="expertName"></textarea>
+                                    ?
                                 </td>
                             </tr>
                             <tr>
@@ -70,7 +70,7 @@
                                     UNIVERSITY
                                 </td>
                                 <td> 
-                                    <textarea name="expertUni" id="expertUni"></textarea>
+                                    ?
                                 </td>
                             </tr>
                             <tr>
@@ -78,7 +78,7 @@
                                     EMAIL
                                 </td>
                                 <td> 
-                                    <input type="text" name="expertEmail" id="expertEmail"> 
+                                    ?
                                 </td>
                             </tr>
                             <tr>
@@ -86,7 +86,7 @@
                                     PHONE NUMBER
                                 </td>
                                 <td> 
-                                    <input type="text" name="expertPhoneNum" id="expertPhoneNum"> 
+                                    ?
                                 </td>
                             </tr>
                             <tr>
@@ -94,7 +94,7 @@
                                     RESEARCH FIELD
                                 </td>
                                 <td> 
-                                    <input type="text" name="expertRscField" id="expertRscField"> 
+                                    ?
                                 </td>
                             </tr>
                             <tr>
@@ -102,7 +102,7 @@
                                     RESEARCH TITLE
                                 </td>
                                 <td> 
-                                    <input type="text" name="expertRscTitle" id="expertRscTitle"> 
+                                    ?
                                 </td>
                             </tr>
                         </table>
@@ -114,7 +114,7 @@
                                     RESEARCH PAPER
                                 </td>
                                 <td> 
-                                    <textarea name="expertRscPaper" id="expertRscPaper"></textarea>
+                                    ?
                                 </td>
                             </tr>
                             <tr>
@@ -122,7 +122,7 @@
                                     RESEARCH YEAR
                                 </td>
                                 <td> 
-                                    <input type="number" name="expertRscYear" id="expertRscYear"> 
+                                    ?
                                 </td>
                             </tr>
                             <tr>
@@ -130,7 +130,7 @@
 
                                 </td>
                                 <td>
-                                    <input type="file">
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -138,7 +138,7 @@
 
                                 </td>
                                 <td>
-                                    <button type="submit" name="addPaper" id="addPaper">+ Add More Paper</button>
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -159,10 +159,6 @@
                             </tr>
                         </table>
                     </div>
-                </div>
-
-                <div class="content-footer">
-                    <button type="submit" name="submit" id="submit" class="btn btn-submit">SUBMIT</button>
                 </div>
             </div>
         </form>

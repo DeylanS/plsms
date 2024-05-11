@@ -21,7 +21,8 @@ a {
     background-color: #ffde59;
     font-size: 13px;
     display: flex;
-    position: relative;
+    position: sticky;
+    top: 0;
 }
 
 .header-right {
@@ -69,11 +70,105 @@ a {
     font-weight: 500;
     border-radius: 5px;
     font-size: 12px;
-    border: 1px solid black;
+    border: 1px solid grey;
 }
 
 .btn-logout {
     margin-top: 13px;
     background-color: #ff914d;
+    padding: 8px 0;
+    width: 90px;
+}
+
+.content {
+    margin-left: 10%;
+    text-align: center;
+}
+
+.form-new-expert {
+    margin: 50px 100px;
+    padding: 20px 40px;
+    background-color: #FFF2BF;
+    border-radius: 15px;
+    font-size: small;
+}
+
+.form-top {
+    display: flex;
+}
+
+tr, td {
+    padding: 15px 20px 15px 10px;
+    text-align: left;
+}
+
+input[type="text"] {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 170%;
+}
+
+input[type="number"] {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 170%;
+}
+
+.form-expert-1 {
+    margin-right: 180px;
+}
+
+.form-expert-2 {
+    margin-right: 180px;
+}
+
+textarea {
+    width: 170%;
+    height: 30px;
+    padding: 5px 10px;
+}
+
+.content-footer {
+    margin: 30px 0 10px 0;
+}
+
+.btn-submit {
+    background-color: #ffca65;
     padding: 8px 20px;
+}
+
+.card {
+    margin: 50px 100px;
+    padding: 20px 40px;
+    background-color: #FFF2BF;
+    border-radius: 15px;
+    font-size: small;
+    display: flex;
+    position: relative;
+    text-align: left;
+}
+
+.card-content-2 {
+    position: absolute;
+    right: 40px;
+}
+
+.btn-edit {
+    margin-top: 13px;
+    background-color: #ffca65;
+    padding: 8px 0;
+    width: 90px;
+}
+
+.btn-delete {
+    margin-top: 13px;
+    background-color: #ff7070;
+    padding: 8px 0;
+    width: 90px;
+}
+
+.link-expert-list {
+    color: black;
 }

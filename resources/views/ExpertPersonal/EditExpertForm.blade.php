@@ -50,7 +50,7 @@
     </div>
 
     <div class="content">
-        <h4>NEW EXPERT</h4>
+        <h4>EDIT EXPERT</h4>
 
         <form method="POST">
             <div class="form-new-expert">
