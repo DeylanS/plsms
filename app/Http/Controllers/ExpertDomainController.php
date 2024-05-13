@@ -25,4 +25,12 @@ class ExpertDomainController extends Controller
     public function AllExpertListView() {
         return view('ExpertAll.ViewAllExpertList');
     }
+
+    public function DetailAllExpertView() {
+        return view('ExpertAll.ViewExpertDetails');
+    }
+
+    public function ReportExpert() {
+        return view('ExpertReport.ViewReportOfExpert');
+    }
 }

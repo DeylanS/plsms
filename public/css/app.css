@@ -172,3 +172,55 @@ textarea {
 .link-expert-list {
     color: black;
 }
+
+.btn-view {
+    margin-top: 13px;
+    background-color: #ffca65;
+    padding: 8px 0;
+    width: 90px;
+    vertical-align: middle;
+}
+
+.expert-search, .expert-search-result {
+    display: flex;
+    margin: 50px 0 30px 120px;
+    width: auto;
+    font-size: small;
+    vertical-align:bottom;
+}
+
+.expert-search-dd {
+    width: 135%;
+    padding: 3px 10px;
+}
+
+.expert-search-layout tr,td {
+    padding: 5px 20px;
+}
+
+.position-abs {
+    position: absolute;
+    right: 140px;
+}
+
+.expert-report, .expert-report-result {
+    display: flex;
+    margin: 50px 0 30px 120px;
+    width: auto;
+    font-size: small;
+    vertical-align:bottom;
+}
+
+.expert-month-dd {
+    width: 135%;
+    padding: 3px 10px;
+}
+
+.expert-year-dd {
+    width: 135%;
+    padding: 3px 10px;
+}
+
+.expert-report-layout tr,td {
+    padding: 5px 20px;
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>List of Personal Expert Domain</title>
+    <title>Expert Domain Report</title>
 
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
@@ -51,31 +51,34 @@
     </div>
 
     <div class="content">
-        <h4>ALL EXPERT DOMAIN</h4>
+        <h4>REPORT</h4>
 
-        <div class="expert-search">
-            <table class="expert-search-layout">
+        <div class="expert-report">
+            <table class="expert-report-layout">
                 <tr>
                     <td>
-                        <p>SEARCH BY: </p>
+                        <p>REPORT BY: </p>
                     </td>
                     <td>
-                        <select class="expert-search-dd">
-                            <option value="RsrchField">Research Field </option>
-                            <option value="ExpertSrchName">Name</option>
+                        <select class="expert-month-dd">
+                            <option value="RsrchMonth">Month</option>
+                            <option value="January">January</option>
                         </select>
                     </td>
                     <td>
-                        <input type="text" style="width:265%; margin-left:45px;" class="expert-search-input" name="expertSearch" id="expertSearch" placeholder="Search">
+                        <select class="expert-year-dd">
+                            <option value="RsrchYear"> Year </option>
+                            <option value="2002">2002</option>
+                        </select>
                     </td>
                     <td>
-                        <button type="submit" name="submit" id="submit" class="btn btn-submit position-abs">SUBMIT</button>
+                        <button type="submit" name="submit" id="submit" class="btn btn-submit position-abs" style="margin-bottom: 50px;">SUBMIT</button>
                     </td>
                 </tr>
             </table>
         </div>
 
-        <div class="expert-search-result">
+        <div class="expert-report-result">
             <table>
                 <tr>
                     <td>
@@ -96,9 +99,6 @@
                     <p> UNIVERSITY </p>
                     <p> RESEARCH FIELD </p>
                 </a>
-            </div>
-            <div class="card-content-2">
-                <button type="button" name="view" id="view" class="btn btn-view"><a style="color: black;" href="../ViewExpertDetails">VIEW</a></button>
             </div>
         </div>
     </div>
