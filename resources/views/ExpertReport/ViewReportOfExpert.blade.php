@@ -94,10 +94,8 @@
         <!-- looping -->
         <div class="card">
             <div class="card-content-1">
-                <a class="link-expert-list" href="../ViewExpert">
+                <a class="link-expert-list" href="../ViewExpertDetails">
                     <p> NAME</p>
-                    <p> UNIVERSITY </p>
-                    <p> RESEARCH FIELD </p>
                 </a>
             </div>
         </div>
