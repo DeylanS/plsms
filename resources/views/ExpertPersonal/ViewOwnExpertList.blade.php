@@ -27,10 +27,10 @@
         </div>
         <div class="nav-expert-domain">
             <p class="menu-header"><strong> EXPERT DOMAIN </strong></p>
-            <p><a class="side-nav-link" href="../ExpertForm">NEW EXPERT</a> </p>
+            <p><a class="side-nav-link" href="../NewExpertForm">NEW EXPERT</a> </p>
             <p><a class="side-nav-link" href="../ViewOwnExpertList">LIST OWN EXPERT</a></p>
             <p><a class="side-nav-link" href="../ViewAllExpertList">LIST ALL EXPERT</a></p>
-            <p><a class="side-nav-link" href="#">REPORT</a></p>
+            <p><a class="side-nav-link" href="../ViewReportOfExpert">REPORT</a></p>
         </div>
         <div class="nav-expert-domain">
             <p class="menu-header"><strong> PUBLICATION </strong></p>
@@ -62,7 +62,7 @@
                 </a>
             </div>
             <div class="card-content-2">
-                <button type="button" name="edit" id="edit" class="btn btn-edit"><a style="color: black;" href="../EditExpertForm">EDIT</a></button>
+                <button type="button" name="edit" id="edit" class="btn btn-edit"><a style="color: black;" href="../EditExpert">EDIT</a></button>
                 <br><br>
                 <button type="button" name="delete" id="delete" class="btn btn-delete">DELETE</button>
             </div>

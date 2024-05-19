@@ -27,7 +27,7 @@
         </div>
         <div class="nav-expert-domain">
             <p class="menu-header"><strong> EXPERT DOMAIN </strong></p>
-            <p><a class="side-nav-link" href="../ExpertForm">NEW EXPERT</a> </p>
+            <p><a class="side-nav-link" href="../NewExpertForm">NEW EXPERT</a> </p>
             <p><a class="side-nav-link" href="../ViewOwnExpertList">LIST OWN EXPERT</a></p>
             <p><a class="side-nav-link" href="../ViewAllExpertList">LIST ALL EXPERT</a></p>
             <p><a class="side-nav-link" href="../ViewReportOfExpert">REPORT</a></p>

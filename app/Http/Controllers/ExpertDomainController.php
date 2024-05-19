@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ExpertDomainController extends Controller
 {
     public function NewExpertView() {
-        return view('ExpertDomain.ExpertForm');
+        return view('ExpertPersonal.NewExpertForm');
     }
 
     public function OwnExpertListView() {
@@ -19,7 +19,7 @@ class ExpertDomainController extends Controller
     }
 
     public function EditExpertView() {
-        return view('ExpertPersonal.EditExpertForm');
+        return view('ExpertPersonal.EditExpert');
     }
 
     public function AllExpertListView() {
@@ -31,6 +31,6 @@ class ExpertDomainController extends Controller
     }
 
     public function ReportExpert() {
-        return view('ExpertReport.ViewReportOfExpert');
+        return view('ExpertAll.ViewReportOfExpert');
     }
 }
