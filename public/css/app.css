@@ -1,0 +1,226 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ml-5 {
+    margin-left: 50px;
+}
+
+.mr-5 {
+    margin-right: 50px;
+}
+
+.header {
+    overflow: hidden;
+    background-color: #ffde59;
+    font-size: 13px;
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+
+.header-right {
+    position: absolute;
+    right: 0;
+}
+
+.header-left {
+    display: flex;
+}
+
+.img-sm {
+    margin-top: 18px;
+    margin-left: 3px;
+    width: 17px;
+    height: 17px;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.side-nav {
+    height: 100%;
+    width: 10%;
+    background-color: #ffde59;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 1; /* Stay at the top */
+    text-align: center;
+    text-decoration: none;
+    font-size: small;
+}
+
+.side-nav-link {
+    color: black;
+}
+
+.menu-header {
+    text-decoration: underline;
+    color: #004AAD;
+}
+
+.btn {
+    font-weight: 500;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 1px solid grey;
+}
+
+.btn-logout {
+    margin-top: 13px;
+    background-color: #ff914d;
+    padding: 8px 0;
+    width: 90px;
+}
+
+.content {
+    margin-left: 10%;
+    text-align: center;
+}
+
+.form-new-expert {
+    margin: 50px 100px;
+    padding: 20px 40px;
+    background-color: #FFF2BF;
+    border-radius: 15px;
+    font-size: small;
+}
+
+.form-top {
+    display: flex;
+}
+
+tr, td {
+    padding: 15px 20px 15px 10px;
+    text-align: left;
+}
+
+input[type="text"] {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 170%;
+}
+
+input[type="number"] {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 170%;
+}
+
+.form-expert-1 {
+    margin-right: 180px;
+}
+
+.form-expert-2 {
+    margin-right: 180px;
+}
+
+textarea {
+    width: 170%;
+    height: 30px;
+    padding: 5px 10px;
+}
+
+.content-footer {
+    margin: 30px 0 10px 0;
+}
+
+.btn-submit {
+    background-color: #ffca65;
+    padding: 8px 20px;
+}
+
+.card {
+    margin: 50px 100px;
+    padding: 20px 40px;
+    background-color: #FFF2BF;
+    border-radius: 15px;
+    font-size: small;
+    display: flex;
+    position: relative;
+    text-align: left;
+}
+
+.card-content-2 {
+    position: absolute;
+    right: 40px;
+}
+
+.btn-edit {
+    margin-top: 13px;
+    background-color: #ffca65;
+    padding: 8px 0;
+    width: 90px;
+}
+
+.btn-delete {
+    margin-top: 13px;
+    background-color: #ff7070;
+    padding: 8px 0;
+    width: 90px;
+}
+
+.link-expert-list {
+    color: black;
+}
+
+.btn-view {
+    margin-top: 13px;
+    background-color: #ffca65;
+    padding: 8px 0;
+    width: 90px;
+    vertical-align: middle;
+}
+
+.expert-search, .expert-search-result {
+    display: flex;
+    margin: 50px 0 30px 120px;
+    width: auto;
+    font-size: small;
+    vertical-align:bottom;
+}
+
+.expert-search-dd {
+    width: 135%;
+    padding: 3px 10px;
+}
+
+.expert-search-layout tr,td {
+    padding: 5px 20px;
+}
+
+.position-abs {
+    position: absolute;
+    right: 140px;
+}
+
+.expert-report, .expert-report-result {
+    display: flex;
+    margin: 50px 0 30px 120px;
+    width: auto;
+    font-size: small;
+    vertical-align:bottom;
+}
+
+.expert-month-dd {
+    width: 135%;
+    padding: 3px 10px;
+}
+
+.expert-year-dd {
+    width: 135%;
+    padding: 3px 10px;
+}
+
+.expert-report-layout tr,td {
+    padding: 5px 20px;
+}
