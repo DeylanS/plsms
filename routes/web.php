@@ -1,6 +1,8 @@
 <?php
 
+
 use App\Http\Controllers\ExpertDomainController;
+use App\Http\Controllers\ProgressMonitorController;
 use Illuminate\Support\Facades\Route;
 
 //<<<<<<< HEAD
@@ -29,6 +31,10 @@ Route::get('/EditExpert', [ExpertDomainController::class, 'EditExpertView'] )->n
 Route::get('/ViewAllExpertList', [ExpertDomainController::class, 'AllExpertListView'] )->name('ExpertAll.ViewAllExpertList');
 Route::get('/ViewExpertDetails', [ExpertDomainController::class, 'DetailAllExpertView'] )->name('ExpertAll.ViewExpertDetails');
 Route::get('/ViewReportOfExpert', [ExpertDomainController::class, 'ReportExpert'] )->name('ExpertAll.ViewReportOfExpert');
+
+//MODULE 4 - MUHAMAD SYARIFUDIN BIN MOHD AZON (CB22126)
+Route::get('/ManagePerformanceHome', [ProgressMonitorController::class, 'ManagePerformanceHome'] )->name('ManagePerformance.ManagePerformanceHome');
+
 // =======
 //     return view('welcome'); 
 // });
