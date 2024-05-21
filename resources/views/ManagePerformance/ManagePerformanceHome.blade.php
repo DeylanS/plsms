@@ -53,10 +53,27 @@
     <div class="content">
         <h4>MANAGE PERFORMANCE</h4>
 
-        <div class="yellowbox">
-        <p>test</p>
+        <div class="yellowbox" >
+            <div class="WF" class="center">
+                Weekly Focus
+            </div>
+            <div class="DT">
+                Draft Thesis
+            </div>
         </div>
-         
+        <div class="">
+        <table>
+            <tr>
+                <td>ADD WEEKLY FOCUS</td>
+                <td>ADD DRAFT THESIS</td>
+            </tr>
+            <tr>
+                <td>VIEW WEEKLY FOCUS</td>
+                <td>VIEW DRAFT THESIS</td>
+            </tr>
+        </table>
+        </div>
+        
     </div>
 </body>
 </html>

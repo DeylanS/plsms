@@ -224,3 +224,33 @@ textarea {
 .expert-report-layout tr,td {
     padding: 5px 20px;
 }
+
+/*MODULE 4 MUHAMAD SYARIFUDIN BIN MOHD AZON CB22126*/
+.yellowbox {
+    margin: 50px 100px;
+    padding: 20px 40px;
+    background-color: #FFF2BF;
+    border-radius: 15px;
+    font-size: small;
+    display: flex;
+    position: relative;
+    text-align: left;
+}
+
+.WF {
+    padding: 20px 40px;
+    background-color: #ff914d;
+    border-radius: 30px;
+    font-size: small;
+    display: flex;
+    margin: auto;
+}
+
+.DT {
+    padding: 20px 40px;
+    background-color: #ff914d;
+    border-radius: 30px;
+    font-size: small;
+    display: flex;
+    margin: auto;
+}
