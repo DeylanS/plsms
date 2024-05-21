@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ManagePerformance</title>
-
     <link href="{{ asset('css/app.css') }}?v={{ time() }}" rel="stylesheet">
-
 </head>
 <body>
     <div class="header">
@@ -41,39 +39,27 @@
         <div class="nav-progress-monitor">
             <p class="menu-header"><strong> PROGRESS MONITORING </strong></p>
             <p><a class="side-nav-link" href="#">CRMP PROFILE</a> </p>
-            <p><a class="side-nav-link" href="#">NEW WEEKLY FOCUS</a></p>
-            <p><a class="side-nav-link" href="#">LIST WEEKLY FOCUS</a></p>
-            <p><a class="side-nav-link" href="#">DRAFT THESIS</a></p>
+            <p><a class="side-nav-link" href="../ManagePerformanceHome">MANAGE PERFORMANCE</a></p>
             <p><a class="side-nav-link" href="#">REPORT</a></p>
         </div>
 
         <button type="button" name="logout" id="logout" class="btn btn-logout btn-lg"> LOG OUT </button>
     </div>
 
-    <div class="content">
-        <h4>MANAGE PERFORMANCE</h4>
-
-        <div class="yellowbox" >
-            <div class="WF" class="center">
-                Weekly Focus
+    <div class="Performancecontent">
+        <h4>Manage Performance</h4>
+        <div class="performance-section">
+            <div class="performance-box">
+                <h5>WEEKLY FOCUS</h5>
+                <a href="NewWeeklyFocusForm"><button class="btn">ADD WEEKLY FOCUS</button></a>
+                <a href="ViewWeeklyFocus"><button class="btn">VIEW WEEKLY FOCUS</button></a>
             </div>
-            <div class="DT">
-                Draft Thesis
+            <div class="performance-box">
+                <h5>DRAFT THESIS</h5>
+                <a href="NewDraftThesisForm"><button class="btn">ADD DRAFT THESIS</button></a>
+                <a href="ViewDraftThesis"><button class="btn">VIEW DRAFT THESIS</button></a>
             </div>
         </div>
-        <div class="">
-        <table>
-            <tr>
-                <td>ADD WEEKLY FOCUS</td>
-                <td>ADD DRAFT THESIS</td>
-            </tr>
-            <tr>
-                <td>VIEW WEEKLY FOCUS</td>
-                <td>VIEW DRAFT THESIS</td>
-            </tr>
-        </table>
-        </div>
-        
     </div>
 </body>
 </html>

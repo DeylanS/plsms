@@ -41,9 +41,7 @@
         <div class="nav-progress-monitor">
             <p class="menu-header"><strong> PROGRESS MONITORING </strong></p>
             <p><a class="side-nav-link" href="#">CRMP PROFILE</a> </p>
-            <p><a class="side-nav-link" href="#">NEW WEEKLY FOCUS</a></p>
-            <p><a class="side-nav-link" href="#">LIST WEEKLY FOCUS</a></p>
-            <p><a class="side-nav-link" href="#">DRAFT THESIS</a></p>
+            <p><a class="side-nav-link" href="../ManagePerformanceHome">MANAGE PERFORMANCE</a></p>
             <p><a class="side-nav-link" href="#">REPORT</a></p>
         </div>
 
