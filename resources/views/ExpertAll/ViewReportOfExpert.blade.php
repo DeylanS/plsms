@@ -49,7 +49,7 @@
     </div>
 
     <div class="content">
-        <h4>REPORT</h4>
+        <h4 class="page-title">REPORT</h4>
 
         <div class="expert-report">
             <table class="expert-report-layout">

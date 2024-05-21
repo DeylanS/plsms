@@ -49,7 +49,7 @@
     </div>
 
     <div class="content">
-        <h4>OWN EXPERT DOMAIN</h4>
+        <h4 class="page-title">OWN EXPERT DOMAIN</h4>
         <!-- looping -->
         <div class="card">
             <div class="card-content-1">

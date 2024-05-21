@@ -48,7 +48,7 @@
     </div>
 
     <div class="content">
-        <h4>EDIT EXPERT</h4>
+        <h4 class="page-title">EDIT EXPERT</h4>
 
         <form method="POST">
             <div class="form-new-expert">

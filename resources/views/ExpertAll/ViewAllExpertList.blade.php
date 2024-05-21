@@ -49,7 +49,7 @@
     </div>
 
     <div class="content">
-        <h4>ALL EXPERT DOMAIN</h4>
+        <h4 class="page-title">ALL EXPERT DOMAIN</h4>
 
         <div class="expert-search">
             <table class="expert-search-layout">
