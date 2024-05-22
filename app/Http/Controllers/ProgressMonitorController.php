@@ -15,6 +15,9 @@ class ProgressMonitorController extends Controller
     public function ViewPlatinumList() {
         return view('CRMPprogressMonitor.ViewPlatinumList');
     }
+    public function CRMPprofile() {
+        return view('CRMPprogressMonitor.CRMPprofile');
+    }
     public function AssignCRMP() {
         return view('ManageCRMPplatinum.AssignCRMP');
     }
@@ -44,6 +47,9 @@ class ProgressMonitorController extends Controller
     }
     public function ViewFeedback() {
         return view('ManagePerformance.ViewFeedback');
+    }
+    public function Report() {
+        return view('ManagePerformance.Report');
     }
 
 }

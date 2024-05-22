@@ -314,15 +314,6 @@ textarea {
     border-radius: 5px;
 }
 
-.add-btn {
-    background-color: #FFFFE0;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
 .save-btn {
     grid-column: span 2;
     background-color: #ff914d;
@@ -331,4 +322,40 @@ textarea {
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.profile-section {
+    background-color: #FFF2BF;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 80%; /* Reduced width */
+    margin: auto; /* Centered */
+    text-align: left;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+    height: 100px;
+    width: 100px;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.profile-left, .profile-right {
+    width: 45%;
+}
+
+.education-section {
+    padding: 20px;
+}
+
+.education-section h3 {
+    margin-bottom: 10px;
 }

@@ -38,9 +38,9 @@
         </div>
         <div class="nav-progress-monitor">
             <p class="menu-header"><strong> PROGRESS MONITORING </strong></p>
-            <p><a class="side-nav-link" href="#">CRMP PROFILE</a> </p>
+            <p><a class="side-nav-link" href="../CRMPprofile">CRMP PROFILE</a> </p>
             <p><a class="side-nav-link" href="../ManagePerformanceHome">MANAGE PERFORMANCE</a></p>
-            <p><a class="side-nav-link" href="#">REPORT</a></p>
+            <p><a class="side-nav-link" href="../Report">REPORT</a></p>
         </div>
 
         <button type="button" name="logout" id="logout" class="btn btn-logout btn-lg"> LOG OUT </button>
@@ -63,15 +63,14 @@
             <div class="focus-block">
                 <h5>SOCIAL BLOCK</h5>
                 <input type="text" placeholder="Enter social task">
-                <button class="add-btn">+ ADD</button>
             </div>
             <div class="focus-block">
                 <h5>RECOVERY BLOCK</h5>
                 <input type="text" placeholder="Enter recovery task">
-                <button class="add-btn">+ ADD</button>
             </div>
             <button class="save-btn">SAVE</button>
         </div>
+
     </div>
 </body>
 </html>
