@@ -43,7 +43,7 @@
             <p><a class="side-nav-link" href="../Report">REPORT</a></p>
         </div>
 
-        <button type="button" name="logout" id="logout" class="btn-logout btn-lg"> LOG OUT </button>
+        <button type="button" name="logout" id="logout" class="btn-logout"> LOG OUT </button>
     </div>
 
     <div class="content">
