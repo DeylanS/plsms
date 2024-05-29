@@ -449,3 +449,48 @@ textarea {
     display: block;
     margin: 20px auto 0; /* Center the save button */
 }
+/*add Draft*/
+.form-container-adddraft {
+    background-color: #fff3cd;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group-adddraft {
+    margin-bottom: 15px;
+}
+
+.form-group-adddraft label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group-adddraft input[type="text"],
+.form-group-adddraft input[type="number"],
+.form-group-adddraft input[type="date"],
+.form-group-adddraft input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-save-adddraft {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.btn-save-adddraft:hover {
+    background-color: #218838;
+}
