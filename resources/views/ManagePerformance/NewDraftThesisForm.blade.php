@@ -52,5 +52,38 @@
             <form action="{{ route('ManagePerformance.saveDraftThesis') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group-adddraft">
-                    <label
+                    <label for="thesis_title">Thesis Title:</label>
+                    <input type="text" id="thesis_title" name="thesis_title" required>
+                </div>
+                <div class="form-group-adddraft">
+                    <label for="draft_number">Draft Number:</label>
+                    <input type="number" id="draft_number" name="draft_number" required>
+                </div>
+                <div class="form-group-adddraft">
+                    <label for="draft_state_date">Draft State Date:</label>
+                    <input type="date" id="draft_state_date" name="draft_state_date" required>
+                </div>
+                <div class="form-group-adddraft">
+                    <label for="completion_date">Completion Date:</label>
+                    <input type="date" id="completion_date" name="completion_date" required>
+                </div>
+                <div class="form-group-adddraft">
+                    <label for="thesis_page_number">Thesis Page Number:</label>
+                    <input type="number" id="thesis_page_number" name="thesis_page_number" required>
+                </div>
+                <div class="form-group-adddraft">
+                    <label for="ddc_group">Draft Declaration Cycle (DDC) Group:</label>
+                    <input type="text" id="ddc_group" name="ddc_group" required>
+                </div>
+                <div class="form-group-adddraft">
+                    <label for="file">File:</label>
+                    <input type="file" id="file" name="file" required>
+                </div>
+                <button type="submit" class="btn-save-adddraft">SAVE</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
 
