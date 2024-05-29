@@ -449,6 +449,7 @@ textarea {
     display: block;
     margin: 20px auto 0; /* Center the save button */
 }
+
 /*add Draft*/
 .form-container-adddraft {
     background-color: #fff3cd;
