@@ -14,9 +14,15 @@ return new class extends Migration
     {
         Schema::create('mentor', function (Blueprint $table) {
             $table->id('Mentor_ID');
-            $table->foreignId('User_ID')->constrained('user')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('User_ID')->unsigned();
+            //$table->foreign('User_ID')->reference('User_ID')->on('user')->onUpdate('cascade')->onDelete('cascade');
             $table->string('Mentor_Staff');
             $table->timestamps();
+        });
+
+        Schema::table('mentor',  function(Blueprint $table){
+
+            $table->foreign('User_ID')->references('User_ID')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
