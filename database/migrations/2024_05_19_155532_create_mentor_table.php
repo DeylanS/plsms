@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mentor', function (Blueprint $table) {
-            $table->id();
+            $table->id('Mentor_ID');
+            $table->foreign('User_ID')->references('User_ID')->on('user');
+            $table->string('Mentor_Position');
             $table->timestamps();
         });
     }
