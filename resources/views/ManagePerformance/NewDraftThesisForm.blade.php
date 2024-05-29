@@ -31,7 +31,7 @@
             <p><a class="side-nav-link" href="../ViewReportOfExpert">REPORT</a></p>
         </div>
         <div class="nav-publication-data">
-            <p class="menu-header"><strong> PUBLICATION DATA </strong></p>
+            <p class="menu-header"><strong> PUBLICATION </strong></p>
             <p><a class="side-nav-link" href="#">NEW PUBLICATION</a></p> 
             <p><a class="side-nav-link" href="#">LIST OWN PUBLICATION</a></p>
             <p><a class="side-nav-link" href="#">LIST ALL PUBLICATION</a></p>
@@ -43,39 +43,39 @@
             <p><a class="side-nav-link" href="../Report">REPORT</a></p>
         </div>
 
-        <button type="button" name="logout" id="logout" class="btn-logout-adddraft btn-lg"> LOG OUT </button>
+        <button type="button" name="logout" id="logout" class="btn-logout btn-lg"> LOG OUT </button>
     </div>
 
     <div class="content">
-        <h2 class="page-title-adddraft">Draft Thesis</h2>
+        <h2 class="page-title">Draft Thesis</h2>
         <div class="form-container-adddraft">
-            <form action="{{ route('ManagePerformance.saveDraftThesis') }}" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="form-group-adddraft">
+                <div class="form-group">
                     <label for="thesis_title">Thesis Title:</label>
                     <input type="text" id="thesis_title" name="thesis_title" required>
                 </div>
-                <div class="form-group-adddraft">
+                <div class="form-group">
                     <label for="draft_number">Draft Number:</label>
                     <input type="number" id="draft_number" name="draft_number" required>
                 </div>
-                <div class="form-group-adddraft">
+                <div class="form-group">
                     <label for="draft_state_date">Draft State Date:</label>
                     <input type="date" id="draft_state_date" name="draft_state_date" required>
                 </div>
-                <div class="form-group-adddraft">
+                <div class="form-group">
                     <label for="completion_date">Completion Date:</label>
                     <input type="date" id="completion_date" name="completion_date" required>
                 </div>
-                <div class="form-group-adddraft">
+                <div class="form-group">
                     <label for="thesis_page_number">Thesis Page Number:</label>
                     <input type="number" id="thesis_page_number" name="thesis_page_number" required>
                 </div>
-                <div class="form-group-adddraft">
+                <div class="form-group">
                     <label for="ddc_group">Draft Declaration Cycle (DDC) Group:</label>
                     <input type="text" id="ddc_group" name="ddc_group" required>
                 </div>
-                <div class="form-group-adddraft">
+                <div class="form-group">
                     <label for="file">File:</label>
                     <input type="file" id="file" name="file" required>
                 </div>
@@ -85,5 +85,6 @@
     </div>
 </body>
 </html>
+
 
 

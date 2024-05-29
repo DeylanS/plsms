@@ -31,7 +31,7 @@
             <p><a class="side-nav-link" href="../ViewReportOfExpert">REPORT</a></p>
         </div>
         <div class="nav-expert-domain">
-            <p class="menu-header"><strong> PUBLICATION DATA </strong></p>
+            <p class="menu-header"><strong> PUBLICATION </strong></p>
             <p><a class="side-nav-link" href="#">NEW PUBLICATION</a></p> 
             <p><a class="side-nav-link" href="#">LIST OWN PUBLICATION</a></p>
             <p><a class="side-nav-link" href="#">LIST ALL PUBLICATION</a></p>
