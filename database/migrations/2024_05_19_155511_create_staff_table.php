@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('staff', function (Blueprint $table) {
             $table->id('Staff_ID');
-            $table->foreign('User_ID')->references('User_ID')->on('user');
-            $table->foreign('Mentor_ID')->references('Mentor_ID')->on('mentor')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            //$table->foreign('User_ID')->references('User_ID')->on('user');
+            //$table->foreign('Mentor_ID')->references('Mentor_ID')->on('mentor')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('Staff_Position');
             $table->timestamps();
         });
