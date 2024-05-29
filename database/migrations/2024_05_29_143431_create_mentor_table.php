@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('mentor', function (Blueprint $table) {
             $table->id('Mentor_ID');
-            $table->foreign('User_ID')->reference('User_ID')->on('user')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('User_ID')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('Mentor_Staff');
             $table->timestamps();
         });
