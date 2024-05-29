@@ -225,10 +225,19 @@ textarea {
     padding: 5px 20px;
 }
 
+
+
+
+
+
+
+
+
+
 /*MODULE 4 MUHAMAD SYARIFUDIN BIN MOHD AZON CB22126*/
 
 .Performancecontent {
-    margin-left: 12%; /* Adjusted to leave space for the side-nav */
+    margin-left: 12%;
     padding: 20px;
     text-align: center;
 }
@@ -278,8 +287,8 @@ textarea {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     justify-items: center;
-    width: 80%; /* Reduced width */
-    margin: auto; /* Centered */
+    width: 80%;
+    margin: auto;
 }
 
 .focus-header {
@@ -329,8 +338,8 @@ textarea {
     border-radius: 15px;
     padding: 20px;
     margin-top: 20px;
-    width: 80%; /* Reduced width */
-    margin: auto; /* Centered */
+    width: 80%; 
+    margin: auto; 
     text-align: left;
 }
 
@@ -358,4 +367,85 @@ textarea {
 
 .education-section h3 {
     margin-bottom: 10px;
+}
+
+.weekly-focus-section {
+    background-color: #FFF2BF;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 80%; /* Adjusted width */
+    margin: auto; /* Centered */
+    position: relative;
+}
+
+.blocks-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 60px; /* Added margin-top to move blocks down */
+}
+
+.block {
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    flex: 1 1 22%; /* Adjusted to fit 4 blocks in a row */
+    box-sizing: border-box;
+    margin-right: 10px;
+    text-align: left; /* Left align the text in blocks */
+}
+
+.block-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.comment {
+    margin-top: 20px;
+    background-color: #FFFFFF; /* Changed background color to white */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: left; /* Left align the text in the comment section */
+    width: 50%; /* Make the comment section 50% width */
+    margin: 0 auto; /* Center the comment section */
+    box-sizing: border-box;
+}
+
+.comment-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.btn-edit {
+    background-color: #ff914d;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* Positioning the button at the top right of the yellow container */
+    right: 20px;
+}
+
+textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-sizing: border-box;
+    resize: none; /* Make the text fields non-resizable */
+}
+
+.btn-save {
+    background-color: #ff914d;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0; /* Center the save button */
 }
