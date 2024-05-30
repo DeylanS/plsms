@@ -10,4 +10,12 @@ class HomeController extends Controller
     {
         return view('home', ['title' => 'PlatinumSphere Management System']);
     }
+
+    public function OwnExpertListView() {
+        return view('ExpertPersonal.ViewOwnExpertList');
+    }
+
+    public function pubcreate() {
+        return view('Publication.pubcreate');
+    }
 }

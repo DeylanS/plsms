@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\ExpertDomainController;
+use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ProgressMonitorController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,13 @@ Route::get('/EditExpert', [ExpertDomainController::class, 'EditExpertView'] )->n
 Route::get('/ViewAllExpertList', [ExpertDomainController::class, 'AllExpertListView'] )->name('ExpertAll.ViewAllExpertList');
 Route::get('/ViewExpertDetails', [ExpertDomainController::class, 'DetailAllExpertView'] )->name('ExpertAll.ViewExpertDetails');
 Route::get('/ViewReportOfExpert', [ExpertDomainController::class, 'ReportExpert'] )->name('ExpertAll.ViewReportOfExpert');
+
+//MODULE 3 - DEYLAN SHIVA (CB22138)
+Route::get('/Publications', [PublicationController::class, 'index'])->name('Publication.index');
+Route::post('/Publication/store', [PublicationController::class, 'store'])->name('Publication.store'); 
+Route::get('/Publication/pubcreate', [PublicationController::class, 'create'])->name('Publication.pubcreate'); 
+Route::get('/Publication/index', [PublicationController::class, 'index'])->name('Publication.index'); 
+
 
 //MODULE 4 - MUHAMAD SYARIFUDIN BIN MOHD AZON (CB22126)
 Route::get('/AddDraftThesisFeedback', [ProgressMonitorController::class, 'AddDraftThesisFeedback'] )->name('CRMPprogressMonitor.AddDraftThesisFeedback');
