@@ -25,7 +25,12 @@ Route::get('/home', [HomeController::class, 'index']);
 // });
 
 //MODULE 2 - HANIS SABRINA BINTI MOHD KHAIRUL MUZAMMIL (CB22157)
+<<<<<<< Updated upstream
 Route::get('/NewExpertForm', [ExpertDomainController::class, 'NewExpertView'] )->name('ExpertPersonal.ExpertForm');
+=======
+/*
+Route::get('/ExpertForm', [ExpertDomainController::class, 'NewExpertView'] )->name('ExpertDomain.ExpertForm');
+>>>>>>> Stashed changes
 Route::get('/ViewOwnExpertList', [ExpertDomainController::class, 'OwnExpertListView'] )->name('ExpertPersonal.ViewOwnExpertList');
 Route::get('/ViewExpert', [ExpertDomainController::class, 'DetailExpertView'] )->name('ExpertPersonal.ViewExpert');
 Route::get('/EditExpert', [ExpertDomainController::class, 'EditExpertView'] )->name('ExpertPersonal.EditExpertForm');
@@ -59,5 +64,9 @@ Route::get('/Report', [ProgressMonitorController::class, 'Report'] )->name('Mana
 
 // =======
 //     return view('welcome'); 
+<<<<<<< Updated upstream
 // });
 //>>>>>>> f361e6d55fa102b2e85d93dcbf1f1361ea2d1524
+=======
+// }); */
+>>>>>>> Stashed changes
