@@ -27,10 +27,10 @@
         </div>
         <div class="nav-expert-domain">
             <p class="menu-header"><strong> EXPERT DOMAIN </strong></p>
-            <p><a class="side-nav-link" href="../NewExpertForm">NEW EXPERT</a> </p>
-            <p><a class="side-nav-link" href="../ViewOwnExpertList">LIST OWN EXPERT</a></p>
-            <p><a class="side-nav-link" href="../ViewAllExpertList">LIST ALL EXPERT</a></p>
-            <p><a class="side-nav-link" href="../ViewReportOfExpert">REPORT</a></p>
+            <p><a class="side-nav-link" href="{{ route('ExpertPersonal.NewExpertForm') }}">NEW EXPERT</a> </p>
+            <p><a class="side-nav-link" href="{{ route('ExpertPersonal.ViewOwnExpertList') }}">LIST OWN EXPERT</a></p>
+            <p><a class="side-nav-link" href="{{ route('ExpertAll.ViewAllExpertList') }}">LIST ALL EXPERT</a></p>
+            <p><a class="side-nav-link" href="{{ route('ExpertAll.ViewReportOfExpert') }}">REPORT</a></p>
         </div>
         <div class="nav-expert-domain">
             <p class="menu-header"><strong> PUBLICATION </strong></p>
@@ -47,23 +47,29 @@
 
         <button type="button" class="btn btn-logout btn-lg"> LOG OUT </button>
     </div>
+    
 
     <div class="content">
         <h4 class="page-title">OWN EXPERT DOMAIN</h4>
         <!-- looping -->
+        @if($expert->isEmpty())
+            <p>No expert found.</p>
+        @else
+        @foreach ($expert as $expert)
         <div class="card">
             <div class="card-content-1">
-                <a class="link-expert-list" href="../ViewExpert">
-                    <p> NAME</p>
-                    <p> UNIVERSITY </p>
-                    <p> RESEARCH FIELD </p>
+                <a class="link-expert-list" href="{{ route('ExpertPersonal.ViewExpert',['Expert_ID' => $expert->Expert_ID]) }}">
+                    <p> {{$expert->Expert_Name}} </p>
+                    <p> {{$expert->Expert_University}} </p>
+                    <p> {{$expert->Expert_ResearchField}} </p>
                 </a>
             </div>
             <div class="card-content-2">
-                <button type="button" name="edit" id="edit" class="btn btn-edit"><a style="color: black;" href="../EditExpert">EDIT</a></button>
-                <br><br>
-                <button type="button" name="delete" id="delete" class="btn btn-delete">DELETE</button>
+                <button type="button" name="edit" id="edit" class="btn btn-edit" style="margin: 0 0 0 0;"><a style="color: black;" href="{{ route('ExpertPersonal.EditExpert') }}">EDIT</a></button>
+                <button type="button" name="delete" id="delete" class="btn btn-delete" style="margin: 60px 20px 0 0;">DELETE</button>
             </div>
         </div>
+        @endforeach
+        @endif
     </div>
 </body>

@@ -23,6 +23,7 @@ a {
     display: flex;
     position: sticky;
     top: 0;
+    z-index: 999;
 }
 
 .header-right {
@@ -93,9 +94,9 @@ a {
     font-size: small;
 }
 
-.form-top {
+/* .form-top {
     display: flex;
-}
+} */
 
 tr, td {
     padding: 15px 20px 15px 10px;
@@ -106,14 +107,14 @@ input[type="text"] {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px 10px;
-    width: 170%;
+    width: 370%;
 }
 
 input[type="number"] {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px 10px;
-    width: 170%;
+    width: 70%;
 }
 
 .form-expert-1 {

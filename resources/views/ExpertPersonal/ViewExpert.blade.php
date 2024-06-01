@@ -26,10 +26,10 @@
         </div>
         <div class="nav-expert-domain">
             <p class="menu-header"><strong> EXPERT DOMAIN </strong></p>
-            <p><a class="side-nav-link" href="../NewExpertForm">NEW EXPERT</a></p>
-            <p><a class="side-nav-link" href="../ViewOwnExpertList">LIST OWN EXPERT</a></p>
-            <p><a class="side-nav-link" href="../ViewAllExpertList">LIST ALL EXPERT</a></p>
-            <p><a class="side-nav-link" href="../ViewReportOfExpert">REPORT</a></p>
+            <p><a class="side-nav-link" href="{{ route('ExpertPersonal.NewExpertForm') }}">NEW EXPERT</a> </p>
+            <p><a class="side-nav-link" href="{{ route('ExpertPersonal.ViewOwnExpertList') }}">LIST OWN EXPERT</a></p>
+            <p><a class="side-nav-link" href="{{ route('ExpertAll.ViewAllExpertList') }}">LIST ALL EXPERT</a></p>
+            <p><a class="side-nav-link" href="{{ route('ExpertAll.ViewReportOfExpert') }}">REPORT</a></p>
         </div>
         <div class="nav-expert-domain">
             <p class="menu-header"><strong> PUBLICATION </strong></p>
@@ -50,7 +50,7 @@
     <div class="content">
         <h4 class="page-title">NEW EXPERT</h4>
 
-        <form method="POST">
+        <!-- <form method="POST"> -->
             <div class="form-new-expert">
                 <div class="form-top">
                     <div class="form-expert-1">
@@ -60,7 +60,7 @@
                                     NAME
                                 </td>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_Name }}
                                 </td>
                             </tr>
                             <tr>
@@ -68,7 +68,7 @@
                                     UNIVERSITY
                                 </td>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_University }}
                                 </td>
                             </tr>
                             <tr>
@@ -76,7 +76,7 @@
                                     EMAIL
                                 </td>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_Email }}
                                 </td>
                             </tr>
                             <tr>
@@ -84,7 +84,7 @@
                                     PHONE NUMBER
                                 </td>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_PhoneNum }}
                                 </td>
                             </tr>
                             <tr>
@@ -92,7 +92,7 @@
                                     RESEARCH FIELD
                                 </td>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_ResearchField }}
                                 </td>
                             </tr>
                             <tr>
@@ -100,19 +100,20 @@
                                     RESEARCH TITLE
                                 </td>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_ResearchTitle }}
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="form-expert-2">
                         <table>
+                        @foreach($expert->expert_publication as $publication)
                             <tr>
                                 <td>
                                     RESEARCH PAPER
                                 </td>
                                 <td> 
-                                    ?
+                                    {{ $publication->EP_PaperTitle }}
                                 </td>
                             </tr>
                             <tr>
@@ -120,46 +121,15 @@
                                     RESEARCH YEAR
                                 </td>
                                 <td> 
-                                    ?
+                                    {{ $publication->EP_PaperYear }}
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>
             </div>
-        </form>
+        <!-- </form> -->
     </div>
 </body>
 </html>
