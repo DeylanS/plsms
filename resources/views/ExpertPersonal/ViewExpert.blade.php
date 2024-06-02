@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>New Expert</title>
+    <title>View Expert</title>
 
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="content">
-        <h4 class="page-title">NEW EXPERT</h4>
+        <h4 class="page-title">VIEW EXPERT</h4>
 
         <!-- <form method="POST"> -->
             <div class="form-new-expert">
@@ -107,7 +107,7 @@
                     </div>
                     <div class="form-expert-2">
                         <table>
-                        @foreach($expert->expert_publication as $publication)
+                            @foreach($expert->expert_publication as $publication)
                             <tr>
                                 <td>
                                     RESEARCH PAPER

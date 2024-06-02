@@ -65,11 +65,19 @@
                 </a>
             </div>
             <div class="card-content-2">
-                <button type="button" name="edit" id="edit" class="btn btn-edit" style="margin: 0 0 0 0;"><a style="color: black;" href="{{ route('ExpertPersonal.EditExpert') }}">EDIT</a></button>
-                <button type="button" name="delete" id="delete" class="btn btn-delete" style="margin: 60px 20px 0 0;">DELETE</button>
+                <button type="button" name="edit" id="edit" class="btn btn-edit" style="margin: 0 0 0 0;"><a style="color: black;" href="{{ route('ExpertPersonal.EditExpert',['Expert_ID' => $expert->Expert_ID]) }}">EDIT</a></button>
+                <button type="button" name="delete" id="delete" class="btn btn-delete" style="margin: 60px 20px 0 0;"><a style="color: black;" href="{{ route('ExpertPersonal.DeleteExpert',['Expert_ID' => $expert->Expert_ID]) }}">DELETE</button>
             </div>
         </div>
         @endforeach
+        @endif
+
+        @if(session('success'))
+            <script>
+                window.onload = function() {
+                    alert("{{ session('success') }}");
+                };
+            </script>
         @endif
     </div>
 </body>

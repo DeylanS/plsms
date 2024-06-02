@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>New Expert</title>
+    <title>Edit Expert</title>
 
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
@@ -50,7 +50,9 @@
     <div class="content">
         <h4 class="page-title">EDIT EXPERT</h4>
 
-        <form method="POST">
+        <form method="POST" action="{{ route('ExpertPersonal.UpdateExpert', ['Expert_ID' => $expert->Expert_ID]) }}" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
             <div class="form-new-expert">
                 <div class="form-top">
                     <div class="form-expert-1">
@@ -60,7 +62,7 @@
                                     NAME
                                 </td>
                                 <td> 
-                                    <textarea name="expertName" id="expertName"></textarea>
+                                    <input type="text" name="expertName" id="expertName"  value="{{ old('Expert_Name', $expert->Expert_Name) }}">
                                 </td>
                             </tr>
                             <tr>
@@ -68,7 +70,7 @@
                                     UNIVERSITY
                                 </td>
                                 <td> 
-                                    <textarea name="expertUni" id="expertUni"></textarea>
+                                    <input type="text" name="expertUni" id="expertUni" value="{{ old('Expert_University', $expert->Expert_University) }}">
                                 </td>
                             </tr>
                             <tr>
@@ -76,7 +78,7 @@
                                     EMAIL
                                 </td>
                                 <td> 
-                                    <input type="text" name="expertEmail" id="expertEmail"> 
+                                    <input type="text" name="expertEmail" id="expertEmail" value="{{ old('Expert_Email', $expert->Expert_Email) }}"> 
                                 </td>
                             </tr>
                             <tr>
@@ -84,7 +86,7 @@
                                     PHONE NUMBER
                                 </td>
                                 <td> 
-                                    <input type="text" name="expertPhoneNum" id="expertPhoneNum"> 
+                                    <input type="text" name="expertPhoneNum" id="expertPhoneNum" value="{{ old('Expert_PhoneNum', $expert->Expert_PhoneNum) }}"> 
                                 </td>
                             </tr>
                             <tr>
@@ -92,7 +94,7 @@
                                     RESEARCH FIELD
                                 </td>
                                 <td> 
-                                    <input type="text" name="expertRscField" id="expertRscField"> 
+                                    <input type="text" name="expertRscField" id="expertRscField" value="{{ old('Expert_ResearchField', $expert->Expert_ResearchField) }}"> 
                                 </td>
                             </tr>
                             <tr>
@@ -100,70 +102,59 @@
                                     RESEARCH TITLE
                                 </td>
                                 <td> 
-                                    <input type="text" name="expertRscTitle" id="expertRscTitle"> 
+                                    <input type="text" name="expertRscTitle" id="expertRscTitle" value="{{ old('Expert_ResearchTitle', $expert->Expert_ResearchTitle) }}"> 
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="form-expert-2">
-                        <table>
-                            <tr>
-                                <td>
-                                    RESEARCH PAPER
-                                </td>
-                                <td> 
-                                    <textarea name="expertRscPaper" id="expertRscPaper"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    RESEARCH YEAR
-                                </td>
-                                <td> 
-                                    <input type="number" name="expertRscYear" id="expertRscYear"> 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-                                    <input type="file">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-                                    <button type="submit" name="addPaper" id="addPaper">+ Add More Paper</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                        </table>
+                        <h4>Publications</h4>
+                        @foreach ($expert->expert_publication as $index => $publication)
+                        <div class="publication">
+                            <!-- Hidden field for publication ID -->
+                            <input type="hidden" name="publications[{{ $index }}][id]" value="{{ $publication->EP_ID }}">
+                            <!-- Paper title field -->
+                            <textarea name="publications[{{ $index }}][paper]" placeholder="Research Paper Title">{{ old('publications.' . $index . '.paper', $publication->EP_PaperTitle) }}</textarea>
+                            <!-- Year field -->
+                            <input type="number" name="publications[{{ $index }}][year]" placeholder="Research Year" value="{{ old('publications.' . $index . '.year', $publication->EP_PaperYear) }}">
+                        </div>
+                        @endforeach
+                        <button type="button" name="addPaper" id="addPaper" class="btn btn-submit">+ Add More Paper</button>
                     </div>
                 </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        let publicationIndex = {{ count($expert->expert_publication) }};
+                        //var publicationIndex = {{ count($expert->expert_publication) }};
+
+                        document.getElementById('addPaper').addEventListener('click', function() {
+                            const publicationDiv = document.createElement('div');
+                            publicationDiv.className = 'publication';
+                            publicationDiv.innerHTML = `
+                                <textarea name="publications[${publicationIndex}][paper]" placeholder="Research Paper Title"></textarea>
+                                <input type="number" name="publications[${publicationIndex}][year]" placeholder="Research Year">
+                                <!-- <input type="file" name="publications[${publicationIndex}][file]"> -->
+                            `;
+                            document.querySelector('.form-expert-2').appendChild(publicationDiv);
+                            publicationIndex++;
+                        });
+                    });
+                </script>
 
                 <div class="content-footer">
                     <button type="submit" name="submit" id="submit" class="btn btn-submit">SUBMIT</button>
                 </div>
             </div>
         </form>
+
+        @if(session('success'))
+        <script>
+            window.onload = function() {
+                alert("Expert has been updated successfully!");
+            };
+        </script>
+        @endif
     </div>
 </body>
 </html>
