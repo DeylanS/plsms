@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('Expert', function (Blueprint $table) {
             $table->id('Expert_ID');
             $table->string('Expert_Name');
+            $table->string('Expert_Gender');
             $table->string('Expert_University');
             $table->string('Expert_Email');
-            $table->string('Expert_PhoneNum');
+            $table->string('Expert_PhoneNum')->nullable();
             $table->string('Expert_ResearchField');
-            $table->string('Expert_ResearchTitle');
             $table->timestamps();
         });
     }

@@ -56,10 +56,10 @@
             <div class="form-new-expert">
                 <div class="form-top">
                     <div class="form-expert-1">
-                        <table>
+                        <table class="form-table">
                             <tr>
-                                <td>
-                                    NAME
+                                <td style="width: 20%;">
+                                    Name
                                 </td>
                                 <td> 
                                     <input type="text" name="expertName" id="expertName"  value="{{ old('Expert_Name', $expert->Expert_Name) }}">
@@ -67,7 +67,15 @@
                             </tr>
                             <tr>
                                 <td>
-                                    UNIVERSITY
+                                    Gender
+                                </td>
+                                <td> 
+                                    <input type="text" name="expertGender" id="expertGender"  value="{{ old('Expert_Gender', $expert->Expert_Gender) }}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    University
                                 </td>
                                 <td> 
                                     <input type="text" name="expertUni" id="expertUni" value="{{ old('Expert_University', $expert->Expert_University) }}">
@@ -75,7 +83,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    EMAIL
+                                    Email
                                 </td>
                                 <td> 
                                     <input type="text" name="expertEmail" id="expertEmail" value="{{ old('Expert_Email', $expert->Expert_Email) }}"> 
@@ -83,7 +91,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    PHONE NUMBER
+                                    Phone Number
                                 </td>
                                 <td> 
                                     <input type="text" name="expertPhoneNum" id="expertPhoneNum" value="{{ old('Expert_PhoneNum', $expert->Expert_PhoneNum) }}"> 
@@ -91,34 +99,32 @@
                             </tr>
                             <tr>
                                 <td>
-                                    RESEARCH FIELD
+                                    Research Field
                                 </td>
                                 <td> 
                                     <input type="text" name="expertRscField" id="expertRscField" value="{{ old('Expert_ResearchField', $expert->Expert_ResearchField) }}"> 
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    RESEARCH TITLE
-                                </td>
-                                <td> 
-                                    <input type="text" name="expertRscTitle" id="expertRscTitle" value="{{ old('Expert_ResearchTitle', $expert->Expert_ResearchTitle) }}"> 
-                                </td>
-                            </tr>
                         </table>
                     </div>
                     <div class="form-expert-2">
-                        <h4>Publications</h4>
+                        <hr>
+                        <h3>Publications</h3>
+                        <br>
                         @foreach ($expert->expert_publication as $index => $publication)
-                        <div class="publication">
+                        <div class="form-expert-publication">
+                            <h4>Research Publication {{ $index + 1 }}</h4>
                             <!-- Hidden field for publication ID -->
                             <input type="hidden" name="publications[{{ $index }}][id]" value="{{ $publication->EP_ID }}">
+                            <input type="text" name="publications[{{ $index }}][research]" placeholder="Research Title" class="form-ep-input" value="{{ old('publications.' . $index . '.year', $publication->EP_ResearchTitle) }}">
                             <!-- Paper title field -->
-                            <textarea name="publications[{{ $index }}][paper]" placeholder="Research Paper Title">{{ old('publications.' . $index . '.paper', $publication->EP_PaperTitle) }}</textarea>
+                            <input type="text" name="publications[{{ $index }}][paper]" placeholder="Research Paper Title" class="form-ep-input" value="{{ old('publications.' . $index . '.paper', $publication->EP_PaperTitle) }}">
+                            <input type="text" name="publications[{{ $index }}][author]" placeholder="Research Paper Author" class="form-ep-input" value="{{ old('publications.' . $index . '.paper', $publication->EP_PaperAuthor) }}">
                             <!-- Year field -->
-                            <input type="number" name="publications[{{ $index }}][year]" placeholder="Research Year" value="{{ old('publications.' . $index . '.year', $publication->EP_PaperYear) }}">
+                            <input type="number" name="publications[{{ $index }}][year]" placeholder="Research Year" class="form-ep-input" value="{{ old('publications.' . $index . '.year', $publication->EP_PaperYear) }}">
                         </div>
                         @endforeach
+                        <br><br>
                         <button type="button" name="addPaper" id="addPaper" class="btn btn-submit">+ Add More Paper</button>
                     </div>
                 </div>
@@ -147,11 +153,12 @@
                 </div>
             </div>
         </form>
+        
 
         @if(session('success'))
         <script>
             window.onload = function() {
-                alert("Expert has been updated successfully!");
+                alert("Expert details has been updated successfully!");
             };
         </script>
         @endif

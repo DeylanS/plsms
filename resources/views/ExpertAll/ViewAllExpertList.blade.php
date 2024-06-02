@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>List of Personal Expert Domain</title>
+    <title>List of All Expert Domain</title>
 
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
@@ -50,27 +50,13 @@
 
     <div class="content">
         <h4 class="page-title">ALL EXPERT DOMAIN</h4>
-
         <div class="expert-search">
-            <table class="expert-search-layout">
-                <tr>
-                    <td>
-                        <p>SEARCH BY: </p>
-                    </td>
-                    <td>
-                        <select class="expert-search-dd">
-                            <option value="RsrchField">Research Field </option>
-                            <option value="ExpertSrchName">Name</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="text" style="width:265%; margin-left:45px;" class="expert-search-input" name="expertSearch" id="expertSearch" placeholder="Search">
-                    </td>
-                    <td>
-                        <button type="submit" name="submit" id="submit" class="btn btn-submit position-abs">SUBMIT</button>
-                    </td>
-                </tr>
-            </table>
+            <form method="GET" action="{{ route('ExpertAll.ViewAllExpertList') }}">
+                <div class="expert-search-bar">
+                    <input type="text" name="search" class="expert-search-input" placeholder="Search by expert name or research field" value="{{ request('search') }}">
+                    <button type="submit" name="submit" id="submit" class="btn btn-submit">Search</button>
+                </div>
+            </form>
         </div>
 
         <div class="expert-search-result">
@@ -80,24 +66,33 @@
                         <p>RESULT FOR: </p>
                     </td>
                     <td>
-                        <p><strong> ? ? </strong></p>
+                        <p><strong> {{ request('search') }} </strong></p>
                     </td>
                 </tr>
             </table>
         </div>
 
+        
         <!-- looping -->
+        @if($expert->isEmpty())
+            <p>No expert found.</p>
+        @else
+        @foreach ($expert as $expert)
         <div class="card">
             <div class="card-content-1">
-                <a class="link-expert-list" href="../ViewExpertDetails">
-                    <p> NAME</p>
-                    <p> UNIVERSITY </p>
-                    <p> RESEARCH FIELD </p>
+                <a class="link-expert-list">
+                    <p> {{$expert->Expert_Name}} </p>
+                    <p> {{$expert->Expert_University}} </p>
+                    <p> {{$expert->Expert_ResearchField}} </p>
                 </a>
             </div>
             <div class="card-content-2">
-                <button type="button" name="view" id="view" class="btn btn-view"><a style="color: black;" href="../ViewExpertDetails">VIEW</a></button>
+                <button type="button" name="view" id="view" class="btn btn-view"><a style="color: black;" href="{{ route('ExpertAll.ViewExpertDetails',['Expert_ID' => $expert->Expert_ID]) }}">VIEW</a></button>
             </div>
         </div>
+        @endforeach
+        @endif
+
+
     </div>
 </body>

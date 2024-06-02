@@ -1,3 +1,5 @@
+/* MODULE 2 - HANIS SABRINA BINTI MOHD KHAIRUL MUZAMMIL (CB22157) */
+
 body {
     margin: 0;
     padding: 0;
@@ -94,12 +96,11 @@ a {
     font-size: small;
 }
 
-/* .form-top {
-    display: flex;
-} */
+.form-top {
+    margin: 20px 50px 20px 50px;
+}
 
 tr, td {
-    padding: 15px 20px 15px 10px;
     text-align: left;
 }
 
@@ -107,28 +108,37 @@ input[type="text"] {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px 10px;
-    width: 370%;
+    box-sizing: border-box;
+    width: 95%;
 }
 
 input[type="number"] {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px 10px;
-    width: 70%;
+    box-sizing: border-box;
+    width: 95%;
 }
 
-.form-expert-1 {
-    margin-right: 180px;
+.form-table {
+    width: 100%;
 }
 
 .form-expert-2 {
-    margin-right: 180px;
+    margin-top: 40px;
+    text-align: left;
 }
 
-textarea {
-    width: 170%;
-    height: 30px;
-    padding: 5px 10px;
+.form-column {
+    padding: 5px 0 15px 0;
+}
+
+.form-expert-publication {
+    margin-top: 30px;
+}
+
+.form-ep-input {
+    margin: 0 0 10px 0;
 }
 
 .content-footer {
@@ -182,51 +192,60 @@ textarea {
     vertical-align: middle;
 }
 
-.expert-search, .expert-search-result {
+.expert-search {
+    width: 80%;
+    margin: 50px 0 20px 120px;
+}
+
+.expert-search-result {
+    width: 80%;
+    margin: 20px 0 20px 100px;
+}
+
+.expert-search-bar {
     display: flex;
-    margin: 50px 0 30px 120px;
-    width: auto;
-    font-size: small;
-    vertical-align:bottom;
 }
 
-.expert-search-dd {
-    width: 135%;
-    padding: 3px 10px;
-}
-
-.expert-search-layout tr,td {
-    padding: 5px 20px;
-}
-
-.position-abs {
-    position: absolute;
-    right: 140px;
+.expert-search-input {
+    margin-right: 30px;
 }
 
 .expert-report, .expert-report-result {
+    width: 80%;
+    margin: 50px 0 20px 120px;
+}
+
+.expert-report-select {
     display: flex;
-    margin: 50px 0 30px 120px;
-    width: auto;
-    font-size: small;
-    vertical-align:bottom;
 }
 
-.expert-month-dd {
-    width: 135%;
-    padding: 3px 10px;
+.view-expert-table {
+    width: 100%;
 }
 
-.expert-year-dd {
-    width: 135%;
-    padding: 3px 10px;
+.view-expert-table table, .view-expert-table th, .view-expert-table td {
+    border: 1px black solid;
+    border-radius: 5px;
+    border-collapse: collapse;
+    padding: 10px;
 }
 
-.expert-report-layout tr,td {
-    padding: 5px 20px;
+.view-expert-table td {
+    background-color:oldlace;
 }
 
+.view-expert-table th {
+    background-color:burlywood;
+    width: 20%;
+}
 
+.report-expert-trend {
+    width: 100%;
+}
+
+.report-expert-trend table, .report-expert-trend th, .report-expert-trend td {
+    padding: 10px;
+}
 
 
 

@@ -28,14 +28,17 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/NewExpertForm', [ExpertDomainController::class, 'NewExpertView'] )->name('ExpertPersonal.NewExpertForm');
 Route::post('/expert/store', [ExpertDomainController::class, 'store'])->name('expert.store');
 Route::get('/ViewOwnExpertList', [ExpertDomainController::class, 'OwnExpertListView'] )->name('ExpertPersonal.ViewOwnExpertList');
-Route::get('ViewExpert/{Expert_ID}', [ExpertDomainController::class, 'DetailExpertView'] )->name('ExpertPersonal.ViewExpert');
+Route::get('/ViewExpert/{Expert_ID}', [ExpertDomainController::class, 'DetailExpertView'] )->name('ExpertPersonal.ViewExpert');
 Route::get('DeleteExpert/{Expert_ID}', [ExpertDomainController::class, 'deleteExpert'])->name('ExpertPersonal.DeleteExpert');
 Route::get('/EditExpert/{Expert_ID}', [ExpertDomainController::class, 'EditExpertView'] )->name('ExpertPersonal.EditExpert');
 Route::put('UpdateExpert/{Expert_ID}', [ExpertDomainController::class, 'updateExpert'])->name('ExpertPersonal.UpdateExpert');
 
 Route::get('/ViewAllExpertList', [ExpertDomainController::class, 'AllExpertListView'] )->name('ExpertAll.ViewAllExpertList');
-Route::get('/ViewExpertDetails', [ExpertDomainController::class, 'DetailAllExpertView'] )->name('ExpertAll.ViewExpertDetails');
+Route::get('/expert/searchExpert', [ExpertDomainController::class, 'searchExpert'])->name('ExpertAll.ViewAllExpertList');
+Route::get('/ViewExpertDetails/{Expert_ID}', [ExpertDomainController::class, 'DetailAllExpertView'] )->name('ExpertAll.ViewExpertDetails');
 Route::get('/ViewReportOfExpert', [ExpertDomainController::class, 'ReportExpert'] )->name('ExpertAll.ViewReportOfExpert');
+Route::get('/expert/filterReport', [ExpertDomainController::class, 'filterReport'] )->name('ExpertAll.ViewReportOfExpert');
+
 
 //MODULE 3 - DEYLAN SHIVA (CB22138)
 Route::get('/Publications', [PublicationController::class, 'index'])->name('Publication.index');

@@ -55,82 +55,70 @@
             <div class="form-new-expert">
                 <div class="form-top">
                     <div class="form-expert-1">
-                        <table>
+                        <table class="form-table">
                             <tr>
-                                <td>
-                                    NAME
+                                <td style="width: 20%;">
+                                    Name
                                 </td>
-                                <td> 
+                                <td class="form-column"> 
                                     <input type="text" name="expertName" id="expertName">
-                                    @error('content')
-                                        {{ $message }}
-                                    @enderror
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%;">
+                                    Gender
+                                </td>
+                                <td class="form-column"> 
+                                    <input type="text" name="expertGender" id="expertGender" placeholder="Male / Female">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    UNIVERSITY
+                                    University
                                 </td>
-                                <td> 
+                                <td class="form-column"> 
                                     <input type="text" name="expertUni" id="expertUni">
-                                    @error('content')
-                                        {{ $message }}
-                                    @enderror
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    EMAIL
+                                    Email
                                 </td>
-                                <td> 
-                                    <input type="text" name="expertEmail" id="expertEmail"> 
-                                    @error('content')
-                                        {{ $message }}
-                                    @enderror
+                                <td class="form-column"> 
+                                    <input type="text" name="expertEmail" id="expertEmail">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    PHONE NUMBER
+                                    Phone Number
                                 </td>
-                                <td> 
-                                    <input type="text" name="expertPhoneNum" id="expertPhoneNum"> 
-                                    @error('content')
-                                        {{ $message }}
-                                    @enderror
+                                <td class="form-column"> 
+                                    <input type="text" name="expertPhoneNum" id="expertPhoneNum">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    RESEARCH FIELD
+                                    Research Field
                                 </td>
-                                <td> 
-                                    <input type="text" name="expertRscField" id="expertRscField"> 
-                                    @error('content')
-                                        {{ $message }}
-                                    @enderror
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    RESEARCH TITLE
-                                </td>
-                                <td> 
-                                    <input type="text" name="expertRscTitle" id="expertRscTitle"> 
-                                    @error('content')
-                                        {{ $message }}
-                                    @enderror
+                                <td class="form-column"> 
+                                    <input type="text" name="expertRscField" id="expertRscField">
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="form-expert-2">
-                        <h4>Publications</h4>
-                        <div class="publication">
-                            <textarea name="publications[0][paper]" placeholder="Research Paper Title"></textarea>
-                            <input type="number" name="publications[0][year]" placeholder="Research Year">
+                        <hr>
+                        <h3>Publications</h3>
+                        <br>
+                        <div class="form-expert-publication">
+                            <h4>Research Publication 1</h4>
+                            <input type="text" name="publications[0][research]" placeholder="Research Title" class="form-ep-input"> 
+                            <input type="text" name="publications[0][paper]" placeholder="Research Paper Title" class="form-ep-input">
+                            <input type="text" name="publications[0][author]" placeholder="Research Paper Author" class="form-ep-input">
+                            <input type="number" name="publications[0][year]" placeholder="Research Year" class="form-ep-input">
                             <!-- <input type="file" name="publications[0][file]"> -->
                         </div>
+                        <br><br>
                         <button type="button" name="addPaper" id="addPaper" class="btn btn-submit">+ Add More Paper</button>
                     </div>
                 </div>
@@ -141,10 +129,14 @@
 
                         document.getElementById('addPaper').addEventListener('click', function() {
                             const publicationDiv = document.createElement('div');
-                            publicationDiv.className = 'publication';
+                            publicationDiv.className = 'form-expert-publication';
                             publicationDiv.innerHTML = `
-                                <textarea name="publications[${publicationIndex}][paper]" placeholder="Research Paper Title"></textarea>
-                                <input type="number" name="publications[${publicationIndex}][year]" placeholder="Research Year">
+                                <br><br><br>
+                                <h4>Research Publication ${publicationIndex + 1}</h4>
+                                <input type="text" name="publications[${publicationIndex}][research]" placeholder="Research Title" class="form-ep-input"> 
+                                <input type="text" name="publications[${publicationIndex}][paper]" placeholder="Research Paper Title" class="form-ep-input">
+                                <input type="text" name="publications[${publicationIndex}][author]" placeholder="Research Paper Author" class="form-ep-input">
+                                <input type="number" name="publications[${publicationIndex}][year]" placeholder="Research Year" class="form-ep-input">
                                 <!-- <input type="file" name="publications[${publicationIndex}][file]"> -->
                             `;
                             document.querySelector('.form-expert-2').appendChild(publicationDiv);

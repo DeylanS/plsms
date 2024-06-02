@@ -14,7 +14,7 @@ class Expert extends Model
 
     protected $primaryKey = 'Expert_ID';
 
-    protected $fillable = ['Expert_ID', 'Expert_Name', 'Expert_University', 'Expert_Email', 'Expert_PhoneNum', 'Expert_ResearchField', 'Expert_ResearchTitle'];
+    protected $fillable = ['Expert_ID', 'Expert_Name', 'Expert_Gender', 'Expert_University', 'Expert_Email', 'Expert_PhoneNum', 'Expert_ResearchField'];
 
 
     public function expert_publication(): HasMany 

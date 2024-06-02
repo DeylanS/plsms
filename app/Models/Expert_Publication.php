@@ -14,10 +14,10 @@ class Expert_Publication extends Model
 
     protected $primaryKey = 'EP_ID';
 
-    protected $fillable = ['EP_ID', 'Expert_ID', 'EP_PaperTitle', 'EP_PaperYear', 'EP_PaperFile'];
+    protected $fillable = ['EP_ID', 'Expert_ID', 'EP_ResearchTitle', 'EP_PaperTitle', 'EP_PaperAuthor', 'EP_PaperYear', 'EP_PaperFile'];
 
     public function expert(): BelongsTo
     {
-        return $this->belongsTo(Expert::class);
+        return $this->belongsTo(Expert::class, 'Expert_ID');
     }
 }

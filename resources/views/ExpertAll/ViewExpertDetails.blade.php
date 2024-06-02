@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>New Expert</title>
+    <title>View Expert</title>
 
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
@@ -48,114 +48,105 @@
     </div>
 
     <div class="content">
-        <h4 class="page-title">NEW EXPERT</h4>
+        <h4 class="page-title">VIEW EXPERT</h4>
 
-        <form method="POST">
+        <!-- <form method="POST"> -->
             <div class="form-new-expert">
                 <div class="form-top">
                     <div class="form-expert-1">
-                        <table>
+                    <table class="view-expert-table">
                             <tr>
-                                <td>
-                                    NAME
-                                </td>
+                                <th>
+                                    Name
+                                </th>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_Name }}
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    UNIVERSITY
-                                </td>
+                                <th>
+                                    Gender
+                                </th>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_Gender }}
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    EMAIL
-                                </td>
+                                <th>
+                                    University
+                                </th>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_University }}
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    PHONE NUMBER
-                                </td>
+                                <th>
+                                    Email
+                                </th>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_Email }}
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    RESEARCH FIELD
-                                </td>
+                                <th>
+                                    Phone Number
+                                </th>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_PhoneNum }}
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    RESEARCH TITLE
-                                </td>
+                                <th>
+                                    Research Field
+                                </th>
                                 <td> 
-                                    ?
+                                    {{ $expert->Expert_ResearchField }}
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="form-expert-2">
-                        <table>
+                    <hr>
+                        <h3>Publications</h3>
+                        <br>
+                        @foreach($expert->expert_publication as $index => $publication)
+                        <h4>Research Publication {{ $index + 1 }}</h4>
+                        <table class="view-expert-table">
                             <tr>
-                                <td>
-                                    RESEARCH PAPER
-                                </td>
+                                <th>
+                                    Research Title
+                                </th>
                                 <td> 
-                                    ?
+                                    {{ $publication->EP_ResearchTitle }}
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    RESEARCH YEAR
-                                </td>
+                                <th>
+                                    Research Paper Title
+                                </th>
                                 <td> 
-                                    ?
+                                    {{ $publication->EP_PaperTitle }}
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-
-                                </td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-                                    
+                                <th>
+                                    Research Author
+                                </th>
+                                <td> 
+                                    {{ $publication->EP_PaperAuthor }}
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-
+                                <th>
+                                    Research Year
+                                </th>
+                                <td> 
+                                    {{ $publication->EP_PaperYear }}
                                 </td>
                             </tr>
                         </table>
+                        <br><br>
+                        @endforeach
                     </div>
                 </div>
             </div>

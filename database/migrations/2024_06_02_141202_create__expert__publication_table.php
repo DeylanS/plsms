@@ -20,7 +20,9 @@ return new class extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
 
+            $table->string('EP_ResearchTitle');
             $table->string('EP_PaperTitle');
+            $table->string('EP_PaperAuthor');
             $table->integer('EP_PaperYear');
             $table->string('EP_PaperFile')->nullable();
 
