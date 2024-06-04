@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('weekly_focuses', function (Blueprint $table) {
+            $table->id('wf_id'); 
+            $table->date('wf_start_date'); 
+            $table->date('wf_end_date'); 
+            $table->string('wf_content'); 
+            $table->string('wf_blocktype'); 
+            $table->string('wf_feedback'); 
+            $table->date('wf_feedback_date');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('weekly_focuses');
+    }
+};

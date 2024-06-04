@@ -4,6 +4,7 @@
 use App\Http\Controllers\ExpertDomainController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ProgressMonitorController;
+use App\Http\Controllers\WeeklyFocusController;
 use Illuminate\Support\Facades\Route;
 
 //<<<<<<< HEAD
@@ -19,10 +20,10 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/home', [HomeController::class, 'index']);
 
-// Route::get('/', function () {
+//Route::get('/', function () {
 // <<<<<<< HEAD
-//     return view('welcome');
-// });
+//    return view('welcome');
+//});
 
 //MODULE 2 - HANIS SABRINA BINTI MOHD KHAIRUL MUZAMMIL (CB22157)
 Route::get('/NewExpertForm', [ExpertDomainController::class, 'NewExpertView'] )->name('ExpertPersonal.NewExpertForm');
@@ -64,3 +65,9 @@ Route::get('/ViewWeeklyFocus', [ProgressMonitorController::class, 'ViewWeeklyFoc
 Route::get('/ViewFeedback', [ProgressMonitorController::class, 'ViewFeedback'] )->name('ManagePerformance.ViewFeedback');
 Route::get('/Report', [ProgressMonitorController::class, 'Report'] )->name('ManagePerformance.Report');
 
+Route::get('/weekly-focus', [WeeklyFocusController::class, 'create'])->name('weekly_focus.create');
+Route::post('/weekly-focus', [WeeklyFocusController::class, 'store'])->name('weekly_focus.store');
+
+Route::get('/din', function () {
+    return view('ManagePerformance.weekly_focus');
+});

@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('publications', function (Blueprint $table) {
-            $table->id();
-            $table->string('Publication_Field');
-            $table->string('Publication_Title');
+        Schema::create('crmp', function (Blueprint $table) {
+            $table->id('crmp_id');
+            $table->string('crmp_start_date'); 
+            $table->date('crmp_end_date');
             $table->timestamps();
-            $table->string('Publication_File');
-            $table->string('Publication_Author');
-            $table->string('Publication_Type');
         });
     }
 
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('publications');
+        Schema::dropIfExists('crmp');
     }
 };
