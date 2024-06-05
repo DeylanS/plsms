@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\WeeklyFocus;
+use App\Models\WeeklyFocuses;
 
 class WeeklyFocusController extends Controller
 {
+    
+
+    public function view()
+    {
+        return view('ManagePerformance.weekly_focus');
+    }
+    
     public function create()
     {
         return view('ManagePerformance.weekly_focus');
@@ -16,23 +24,31 @@ class WeeklyFocusController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'wf_start_date' => 'required|date',
-            'wf_end_date' => 'required|date',
-            'wf_content' => 'required|string',
-            'wf_blocktype' => 'required|string',
-            'wf_feedback' => 'required|string',
-            'wf_feedback_date' => 'required|date',
+            'WF_Date' => 'required|date',
+            'WF_FocusInfo' => 'required|date',
+            'WF_AdminInfo' => 'required|string',
+            'WF_SocialInfo' => 'required|string',
+            'WF_RecoveryInfo' => 'required|string',
+            // 'wf_feedback_date' => 'required|date',
         ]);
 
         // Debugging line
-        \Log::info('Validated data:', $validated);
+        //Log::info('Validated data:', $validated);
 
-        WeeklyFocus::create($validated);
+        //WeeklyFocus::create($validated);
 
         // Debugging line
-        \Log::info('Data saved to database.');
+        //Log::info('Data saved to database.');
 
-        return redirect()->route('weekly_focus.create')->with('success', 'Weekly Focus saved successfully.');
+        $weeklyFocus = new WeeklyFocus();
+        $weeklyFocus->WF_Date = $request->input('WF_Date');
+        $weeklyFocus->WF_FocusInfo = $request->input('WF_FocusInfo');
+        $weeklyFocus->WF_AdminInfo = $request->input('WF_AdminInfo');
+        $weeklyFocus->WF_SocialInfo = $request->input('WF_SocialInfo');
+        $weeklyFocus->WF_RecoveryInfo = $request->input('WF_RecoveryInfo');
+        $weeklyFocus->save();
+
+        return redirect()->back()->with('success', 'Weekly Focus saved successfully.');
     }
 }
 

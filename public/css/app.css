@@ -320,6 +320,27 @@ input[type="number"] {
     text-align: center;
 }
 
+.focus-content {
+    justify-content: center;
+}
+
+.focus-content input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.focus-one {
+    display: flex;
+}
+
+.focus-two {
+    display: flex;
+}
+
 .focus-block {
     background-color: #FFF2BF;
     border-radius: 15px;

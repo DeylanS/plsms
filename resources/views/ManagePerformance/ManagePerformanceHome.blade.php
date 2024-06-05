@@ -17,7 +17,7 @@
         <div class="performance-box">
             <h5>WEEKLY FOCUS</h5>
             <a href="{{ route('weekly_focus.create') }}"><button class="btn">ADD WEEKLY FOCUS</button></a>
-            <a href="{{ route('weekly_focus.view') }}"><button class="btn">VIEW WEEKLY FOCUS</button></a>
+            <a href="{{ route('ManagePerformance.weekly_focus') }}"><button class="btn">VIEW WEEKLY FOCUS</button></a>
         </div>
         <div class="performance-box">
             <h5>DRAFT THESIS</h5>
