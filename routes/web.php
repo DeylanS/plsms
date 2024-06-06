@@ -69,6 +69,6 @@ Route::get('/Publication/index', [PublicationController::class, 'index'])->name(
 Route::get('/weekly_focus', [WeeklyFocusController::class, 'create'])->name('weekly_focus.create');
 Route::post('/weeklyFocus', [WeeklyFocusController::class, 'store'])->name('weeklyFocus.store');
 
-Route::get('/din', function () {
+Route::get('/WeeklyFocus', function () {
     return view('ManagePerformance.weekly_focus');
 });
