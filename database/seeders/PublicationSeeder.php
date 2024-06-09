@@ -16,6 +16,8 @@ class PublicationSeeder extends Seeder
         $publications = [
             [
                 'Publication_Field'=> 'text is here',
+                'Mentor_ID'=>1,
+                'User_ID'=>1,
                 'Publication_Title'=> 'text is here',
                 'Publication_File'=> 'file is here',
                 'Publication_Author'=> 'author is here',

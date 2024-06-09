@@ -15,7 +15,7 @@ class PublicationController extends Controller
         //$publications = Publication::all();
         //dd($publications); // Dump and die to check the retrieved data
 
-        return view('Publication.index',['publications' => Publication::latest()->get()]);
+        return view('PublicationAll.ViewAllPublicationList',['publications' => Publication::latest()->get()]);
         //return view('Publication.index', ['publications' => Publication::get()]);
         //return view('posts.index',['posts' => Publication::with('user')->latest()->get()]);
     }
@@ -25,7 +25,7 @@ class PublicationController extends Controller
      */
     public function create()
     {
-        return view('Publication.pubcreate');
+        return view('PublicationPersonal.NewPublicationForm');
     }
 
     /**
@@ -35,8 +35,11 @@ class PublicationController extends Controller
     {
         $data = $request->validate([
             
+            'Mentor_ID'=>'required|int',
+            'User_ID'=>'required|int',
             'Publication_Field'=>'required|string',
             'Publication_Title'=>'required|string',
+            'Publication_Date'=>'required|date',
             'Publication_File'=>'required|string',
             'Publication_Author'=>'required|string',
             'Publication_Type'=>'required|string'
@@ -44,7 +47,7 @@ class PublicationController extends Controller
         Publication::create($data);
         //$request->Publication::create($data);
         
-        return redirect(route('Publication.index'));
+        return redirect(route('PublicationPersonal.index'));
     }
 
     /**

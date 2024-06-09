@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>This is the index page for post</h1>
-<a class="btn" href="{{ route('Publication.pubcreate') }}">Add Publication</a>
+<a class="btn" href="{{ route('PublicationPersonal.NewPublicationForm') }}">Add Publication</a>
 
 <br>
 <br>

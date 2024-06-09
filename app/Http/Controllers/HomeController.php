@@ -15,7 +15,7 @@ class HomeController extends Controller
         return view('ExpertPersonal.ViewOwnExpertList');
     }
 
-    public function pubcreate() {
-        return view('Publication.pubcreate');
+    public function NewPublicationForm() {
+        return view('PublicationPersonal.NewPublicationForm');
     }
 }

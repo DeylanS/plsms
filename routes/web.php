@@ -43,11 +43,12 @@ Route::get('/expert/filterReport', [ExpertDomainController::class, 'filterReport
 
 
 //MODULE 3 - DEYLAN SHIVA (CB22138)
-Route::get('/Publications', [PublicationController::class, 'index'])->name('Publication.index');
-Route::post('/Publication/store', [PublicationController::class, 'store'])->name('Publication.store'); 
-Route::get('/Publication/pubcreate', [PublicationController::class, 'create'])->name('Publication.pubcreate'); 
-Route::get('/Publication/index', [PublicationController::class, 'index'])->name('Publication.index'); 
+Route::get('/PublicationPersonal', [PublicationController::class, 'index'])->name('PublicationPersonal.index');
+Route::post('/PublicationPersonal/store', [PublicationController::class, 'store'])->name('PublicationPersonal.store'); 
+Route::get('/PublicationPersonal/NewPublicationForm', [PublicationController::class, 'create'])->name('PublicationPersonal.NewPublicationForm'); 
+Route::get('/PublicationPersonal/index', [PublicationController::class, 'index'])->name('PublicationPersonal.index'); 
 
+Route::get('/PublicationAll/ViewAllPublicationList', [PublicationController::class, 'index'])->name('PublicationAll.ViewAllPublicationList'); 
 
 //MODULE 4 - MUHAMAD SYARIFUDIN BIN MOHD AZON (CB22126)
 // Route::get('/AddDraftThesisFeedback', [ProgressMonitorController::class, 'AddDraftThesisFeedback'] )->name('CRMPprogressMonitor.AddDraftThesisFeedback');
