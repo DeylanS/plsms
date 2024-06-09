@@ -8,25 +8,25 @@
 </head>
 <body>
     <!-- resources/views/manage_performance.blade.php -->
-@extends('layouts.master')
+    @extends('layouts.master')
 
-@section('content')
-<div class="Performancecontent">
-    <h4>Manage Performance</h4>
-    <div class="performance-section">
-        <div class="performance-box">
-            <h5>WEEKLY FOCUS</h5>
-            <a href="{{ route('weekly_focus.create') }}"><button class="btn">ADD WEEKLY FOCUS</button></a>
-            <a href="{{ route('ManagePerformance.weekly_focus') }}"><button class="btn">VIEW WEEKLY FOCUS</button></a>
-        </div>
-        <div class="performance-box">
-            <h5>DRAFT THESIS</h5>
-            <a href="{{ route('draft_thesis.create') }}"><button class="btn">ADD DRAFT THESIS</button></a>
-            <a href="{{ route('draft_thesis.view') }}"><button class="btn">VIEW DRAFT THESIS</button></a>
+    @section('content')
+    <div class="Performancecontent">
+        <h4>Manage Performance</h4>
+        <div class="performance-section">
+            <div class="performance-box">
+                <h5>WEEKLY FOCUS</h5>
+                <a href="{{ route('weekly_focus.store') }}"><button class="btn">ADD WEEKLY FOCUS</button></a>
+                <a href="{{ route('weekly_focus.index') }}"><button class="btn">VIEW WEEKLY FOCUS</button></a>
+            </div>
+            <div class="performance-box">
+                <h5>DRAFT THESIS</h5>
+                <a href="{{ route('draft_thesis.store') }}"><button class="btn">ADD DRAFT THESIS</button></a>
+                <a href="{{ route('draft_thesis.index') }}"><button class="btn">VIEW DRAFT THESIS</button></a>
+            </div>
         </div>
     </div>
-</div>
-@endsection
-
+    @endsection
 </body>
 </html>
+

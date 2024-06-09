@@ -11,18 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Draft_Thesis', function (Blueprint $table) {
-            $table->increments('DT_ID');
-            $table->string('DT_Title');
-            $table->integer('DT_DraftNumber');
-            $table->date('DT_StartDate');
-            $table->date('DT_EndDate');
-            $table->string('DT_draftFile')->nullable();
-            $table->integer('DT_PagesNumber');
-            $table->string('DT_Feedback');
-            $table->string('DT_TotalPages');
-            $table->string('DT_PrepDays');
-            $table->integer('DT_DDC');
+        Schema::create('draft_thesis', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('dt_title');
+            $table->integer('dt_draft_number');
+            $table->date('dt_start_date');
+            $table->date('dt_complete_date');
+            $table->date('dt_prep_days');
+            $table->integer('dt_pages_number');
+            $table->string('dt_ddc');
             $table->timestamps();
         });
     }
@@ -32,6 +29,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Draft_Thesis');
+        Schema::dropIfExists('draft_thesis');
     }
 };
+
+

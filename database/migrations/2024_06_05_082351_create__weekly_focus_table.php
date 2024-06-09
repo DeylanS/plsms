@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('Weekly_Focus', function (Blueprint $table) {
             $table->increments('WF_ID');
-            $table->date('WF_Date');
+            $table->date('WF_StartDate');
+            $table->date('WF_CompleteDate');
             $table->string('WF_FocusInfo');
             $table->string('WF_AdminInfo');
             $table->string('WF_SocialInfo');
@@ -31,3 +32,4 @@ return new class extends Migration
         Schema::dropIfExists('Weekly_Focus');
     }
 };
+

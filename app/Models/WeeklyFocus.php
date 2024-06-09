@@ -9,13 +9,9 @@ class WeeklyFocus extends Model
 {
     use HasFactory;
 
-    protected $table = 'weekly_focus'; // Specify the table name
-
-    protected $primaryKey = 'WF_ID';
-
     protected $fillable = [
-        'WF_ID',
-        'WF_Date',
+        'WF_StartDate',
+        'WF_CompleteDate',
         'WF_FocusInfo',
         'WF_AdminInfo',
         'WF_SocialInfo',
@@ -23,3 +19,5 @@ class WeeklyFocus extends Model
         'WF_Feedback',
     ];
 }
+
+

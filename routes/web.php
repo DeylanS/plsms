@@ -5,6 +5,7 @@ use App\Http\Controllers\ExpertDomainController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ProgressMonitorController;
 use App\Http\Controllers\WeeklyFocusController;
+use App\Http\Controllers\DraftThesisController;
 use Illuminate\Support\Facades\Route;
 
 //<<<<<<< HEAD
@@ -66,9 +67,26 @@ Route::get('/Publication/index', [PublicationController::class, 'index'])->name(
 // Route::get('/Report', [ProgressMonitorController::class, 'Report'] )->name('ManagePerformance.Report');
 
 // Route::get('/weekly_focus', [WeeklyFocusController::class, 'view'])->name('ManagePerformance.weekly_focus');
-Route::get('/weekly_focus', [WeeklyFocusController::class, 'create'])->name('weekly_focus.create');
-Route::post('/weeklyFocus', [WeeklyFocusController::class, 'store'])->name('weeklyFocus.store');
 
-Route::get('/WeeklyFocus', function () {
-    return view('ManagePerformance.weekly_focus');
-});
+Route::get('/weekly_focus', [WeeklyFocusController::class, 'index'])->name('weekly_focus.index');
+Route::get('/weekly_focus/create', [WeeklyFocusController::class, 'create'])->name('weekly_focus.create');
+Route::post('/weekly_focus/store', [WeeklyFocusController::class, 'store'])->name('weekly_focus.store');
+
+Route::resource('draft_thesis', DraftThesisController::class);
+
+Route::get('/ManagePerformanceHome', function () {
+    return view('ManagePerformance.ManagePerformanceHome');
+})->name('ManagePerformanceHome');
+
+Route::get('/ViewWeeklyFocus', function () {
+    return view('ViewWeeklyFocus');
+})->name('ViewWeeklyFocus');
+
+Route::get('/DraftThesis', function () {
+    return view('draft_thesis');
+})->name('draft_thesis.create');
+
+Route::get('/ViewDraftThesis', function () {
+    return view('ViewDraftThesis');
+})->name('ViewDraftThesis');
+
