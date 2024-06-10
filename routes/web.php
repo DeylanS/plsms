@@ -43,12 +43,17 @@ Route::get('/expert/filterReport', [ExpertDomainController::class, 'filterReport
 
 
 //MODULE 3 - DEYLAN SHIVA (CB22138)
-Route::get('/PublicationPersonal', [PublicationController::class, 'index'])->name('PublicationPersonal.index');
+Route::get('/PublicationPersonal', [PublicationController::class, 'index'])->name('PublicationPersonal.ViewOwnPublicationList');
 Route::post('/PublicationPersonal/store', [PublicationController::class, 'store'])->name('PublicationPersonal.store'); 
 Route::get('/PublicationPersonal/NewPublicationForm', [PublicationController::class, 'create'])->name('PublicationPersonal.NewPublicationForm'); 
-Route::get('/PublicationPersonal/index', [PublicationController::class, 'index'])->name('PublicationPersonal.index'); 
+Route::get('/PublicationAll/ViewPublicationList', [PublicationController::class, 'index'])->name('PublicationAll.ViewPublicationList'); 
+Route::get('/PublicationPersonal/ViewPublication/{id}', [PublicationController::class, 'showPublication'])->name('PublicationPersonal.ViewPublication');
+Route::get('/PublicationPersonal/EditPublication/{id}', [PublicationController::class, 'edit'])->name('PublicationPersonal.EditPublication');
+//Route::put('/PublicationPersonal/update', [PublicationController::class, 'update'])->name('PublicationPersonal.update');
+Route::put('/PublicationPersonal/update/{id}', [PublicationController::class, 'update'])->name('PublicationPersonal.update');
 
-Route::get('/PublicationAll/ViewAllPublicationList', [PublicationController::class, 'index'])->name('PublicationAll.ViewAllPublicationList'); 
+
+
 
 //MODULE 4 - MUHAMAD SYARIFUDIN BIN MOHD AZON (CB22126)
 // Route::get('/AddDraftThesisFeedback', [ProgressMonitorController::class, 'AddDraftThesisFeedback'] )->name('CRMPprogressMonitor.AddDraftThesisFeedback');

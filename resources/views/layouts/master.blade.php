@@ -36,7 +36,7 @@
             <p class="menu-header"><strong> PUBLICATION </strong></p>
             <p><a class="side-nav-link" href="{{ route('PublicationPersonal.NewPublicationForm') }}">NEW PUBLICATION</a></p> 
             <p><a class="side-nav-link" href="#">LIST OWN PUBLICATION</a></p>
-            <p><a class="side-nav-link" href="{{ route('PublicationAll.ViewAllPublicationList') }}">LIST ALL PUBLICATION</a></p>
+            <p><a class="side-nav-link" href="{{ route('PublicationAll.ViewPublicationList') }}">LIST ALL PUBLICATION</a></p>
         </div>
         <div class="nav-progress-monitor">
             <p class="menu-header"><strong> PROGRESS MONITORING </strong></p>

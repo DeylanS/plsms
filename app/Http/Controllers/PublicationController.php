@@ -15,7 +15,7 @@ class PublicationController extends Controller
         //$publications = Publication::all();
         //dd($publications); // Dump and die to check the retrieved data
 
-        return view('PublicationAll.ViewAllPublicationList',['publications' => Publication::latest()->get()]);
+        return view('PublicationAll.ViewPublicationList',['publications' => Publication::latest()->get()]);
         //return view('Publication.index', ['publications' => Publication::get()]);
         //return view('posts.index',['posts' => Publication::with('user')->latest()->get()]);
     }
@@ -47,7 +47,7 @@ class PublicationController extends Controller
         Publication::create($data);
         //$request->Publication::create($data);
         
-        return redirect(route('PublicationPersonal.index'));
+        return redirect(route('PublicationPersonal.ViewOwnPublicationList'));
     }
 
     /**
@@ -61,18 +61,46 @@ class PublicationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Publication $post)
+    public function edit($id)
     {
-        //
+        $publication = Publication::where('Publication_ID', $id)->firstOrFail();
+        return view('PublicationPersonal.EditPublication', compact('publication'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Publication $post)
+    public function update(Request $request, $id)
     {
-        //
+        // Validate the request data
+        $request->validate([
+            'Publication_Field' => 'required',
+            'Publication_Title' => 'required',
+            'Publication_Date' => 'required|date',
+            'Publication_File' => 'required|url',
+            'Publication_Author' => 'required',
+            'Publication_Type' => 'required',
+        ]);
+
+        // Find the publication by ID
+        $publication = Publication::where('Publication_ID', $id)->firstOrFail();
+
+        // Update the publication record with the new data
+        $publication->update([
+            'Publication_Field' => $request->Publication_Field,
+            'Publication_Title' => $request->Publication_Title,
+            'Publication_Date' => $request->Publication_Date,
+            'Publication_File' => $request->Publication_File,
+            'Publication_Author' => $request->Publication_Author,
+            'Publication_Type' => $request->Publication_Type,
+        ]);
+
+        // Redirect back to the index page with a success message
+        //return redirect()->route('PublicationPersonal.index')->with('success', 'Publication updated successfully.');
+        return redirect()->route('PublicationPersonal.ViewPublication', ['id' => $id])->with('success', 'Publication updated successfully.');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -81,4 +109,11 @@ class PublicationController extends Controller
     {
         //
     }
+
+    public function showPublication($id)
+    {
+        $publication = Publication::where('Publication_ID', $id)->firstOrFail();
+        return view('PublicationPersonal.ViewPublication', compact('publication'));
+    }   
 }
+
