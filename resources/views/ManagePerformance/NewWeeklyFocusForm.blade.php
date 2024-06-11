@@ -14,7 +14,7 @@
         <form action="{{ route('weekly_focus.store') }}" method="POST">
             @csrf
             <div class="focus-content">
-                <label for="WF_StartDate">Start Date:</label>
+                <label for="startDate">Start Date:</label>
                 <input type="date" id="WF_StartDate" name="WF_StartDate" value="{{ old('WF_StartDate') }}" required>
                 @error('WF_StartDate')
                     <span class="error">{{ $message }}</span>

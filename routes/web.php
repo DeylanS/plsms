@@ -125,6 +125,10 @@ Route::prefix('manage-performance')->group(function() {
     Route::get('new-weekly-focus', [WeeklyFocusController::class, 'create'])->name('weekly_focus.create');
     Route::post('new-weekly-focus', [WeeklyFocusController::class, 'store'])->name('weekly_focus.store');
     Route::get('view-weekly-focus', [WeeklyFocusController::class, 'index'])->name('weekly_focus.index');
+    Route::get('manage-performance/edit-weekly-focus/{id}', [WeeklyFocusController::class, 'edit'])->name('weekly_focus.edit');
+
+
+
 });
 
 // CRMPprogressMonitor Routes
