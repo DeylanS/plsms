@@ -2,7 +2,8 @@
 
 @section('content')
     <h1>This is the index page for post</h1>
-    <a class="btn" href="{{ route('PublicationPersonal.NewPublicationForm') }}">Add Publication</a>
+    <a class="btn" href="{{ route('PublicationAll.ViewReportOfPublication') }}" target="_blank">View Report</a>
+
 
     <br><br>
 
@@ -21,7 +22,7 @@
                         <tr>
                             <td>{{$publication->Publication_Title}}</td>
                             <td>{{$publication->Publication_Author}}</td>
-                            <td><a class="btn" href="{{ route('PublicationPersonal.ViewPublication', $publication->Publication_ID) }}">View</a><a class="btn" href="{{ route('PublicationPersonal.EditPublication', $publication->Publication_ID) }}">Edit</a></td>
+                            <td><a class="btn" href="{{ route('PublicationAll.ViewPublicationDetails', $publication->Publication_ID) }}">View</a></td>
                             </td>
                         </tr>
                     @endforeach

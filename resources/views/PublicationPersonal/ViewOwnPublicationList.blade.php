@@ -1,48 +1,32 @@
 @extends('layouts.master')
 
 @section('content')
-<h1>This is the index page for post</h1>
-<a class="btn" href="{{ route('PublicationPersonal.NewPublicationForm') }}">Add Publication</a>
+    <h1>This is the index page for post</h1>
+    <a class="btn" href="{{ route('PublicationPersonal.NewPublicationForm') }}">Add Publication</a>
 
-<br>
-<br>
-@if($publications->isEmpty())
-    <p>No publications found.</p>
-@else
-@foreach ($publications as $publication)
-    <div>
-    <table border="1" width=50%>
-        <tr>
-            <td>
-                <h3>
-                    {{$publication->Publication_Field}}
-                </h3>
-            </td>
-            <td>
-                <h4>
-                    {{$publication->Publication_Title}}
-                </h4>
-            </td>
-            <td>
-                <h4>
-                    {{$publication->Publication_File}}
-                </h4>
-            </td>
-            <td>
-                <h4>
-                    {{$publication->Publication_Author}}
-                </h4>
-            </td>
-            <td>
-                <h4>
-                    {{$publication->Publication_Type}}
-                </h4>
-            </td>
-            <br>
-        </tr>
-    </div>
-    <br>
-    <br>
-@endforeach
-@endif
+    <br><br>
+
+    @if($publications->isEmpty())
+        <p>No publications found.</p>
+    @else
+        <center>
+            <div>
+                <table border="1" width="80%">
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach ($publications as $publication)
+                        <tr>
+                            <td>{{$publication->Publication_Title}}</td>
+                            <td>{{$publication->Publication_Author}}</td>
+                            <td><a class="btn" href="{{ route('PublicationPersonal.ViewPublication', $publication->Publication_ID) }}">View</a><a class="btn" href="{{ route('PublicationPersonal.EditPublication', $publication->Publication_ID) }}">Edit</a></td>
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+        </center>
+    @endif
 @endsection

@@ -23,6 +23,14 @@
     </tr>
     <tr>
         <td>
+            <h3>Date:</h3>
+        </td>
+        <td>
+            <h4>{{ $publication->Publication_Date }}</h4>
+        </td>
+    </tr>
+    <tr>
+        <td>
             <h3>File:</h3>
         </td>
         <td>
