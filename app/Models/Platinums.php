@@ -5,7 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Platinums extends Model
+class Platinum extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name', 'details', 'crmp_id'
+    ];
+
+    public function crmp()
+    {
+        return $this->belongsTo(CRMP::class);
+    }
 }

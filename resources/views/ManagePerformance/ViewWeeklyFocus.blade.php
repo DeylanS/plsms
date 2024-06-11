@@ -5,15 +5,12 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- resources/views/viewWeeklyFocus.blade.php -->
-
 @extends('layouts.master')
 
 @section('content')
 <div class="content">
     <h4 class="page-title">View Weekly Focus</h4>
     <div class="focus-section">
-        <!-- Display Weekly Focus details here -->
         <div class="focus-content">
             <label for="startDate">Start Date:</label>
             <span>{{ $weeklyFocus->WF_StartDate }}</span>

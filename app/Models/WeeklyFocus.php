@@ -10,14 +10,6 @@ class WeeklyFocus extends Model
     use HasFactory;
 
     protected $fillable = [
-        'WF_StartDate',
-        'WF_CompleteDate',
-        'WF_FocusInfo',
-        'WF_AdminInfo',
-        'WF_SocialInfo',
-        'WF_RecoveryInfo',
-        'WF_Feedback',
+        'WF_Date', 'WF_CompleteDate', 'WF_FocusInfo', 'WF_AdminInfo', 'WF_SocialInfo', 'WF_RecoveryInfo'
     ];
 }
-
-

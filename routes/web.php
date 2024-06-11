@@ -6,6 +6,9 @@ use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ProgressMonitorController;
 use App\Http\Controllers\WeeklyFocusController;
 use App\Http\Controllers\DraftThesisController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\CRMPProgressMonitorController;
+use App\Http\Controllers\ManageCRMPPlatinumController;
 use Illuminate\Support\Facades\Route;
 
 //<<<<<<< HEAD
@@ -73,7 +76,7 @@ Route::put('/PublicationPersonal/update/{id}', [PublicationController::class, 'u
 // Route::get('/Report', [ProgressMonitorController::class, 'Report'] )->name('ManagePerformance.Report');
 
 // Route::get('/weekly_focus', [WeeklyFocusController::class, 'view'])->name('ManagePerformance.weekly_focus');
-
+/*
 Route::get('/weekly_focus', [WeeklyFocusController::class, 'index'])->name('weekly_focus.index');
 Route::get('/weekly_focus/create', [WeeklyFocusController::class, 'create'])->name('weekly_focus.create');
 Route::post('/weekly_focus/store', [WeeklyFocusController::class, 'store'])->name('weekly_focus.store');
@@ -94,5 +97,44 @@ Route::get('/DraftThesis', function () {
 
 Route::get('/ViewDraftThesis', function () {
     return view('ViewDraftThesis');
-})->name('ViewDraftThesis');
+})->name('ViewDraftThesis');*/
 
+Route::view('/new-weekly-focus', 'ManagePerformance.NewWeeklyFocusForm');
+Route::view('/view-weekly-focus', 'ManagePerformance.ViewWeeklyFocus');
+Route::view('/edit-weekly-focus', 'ManagePerformance.EditWeeklyFocus');
+Route::view('/new-draft-thesis', 'ManagePerformance.NewDraftThesisForm');
+Route::view('/view-draft-thesis', 'ManagePerformance.ViewDraftThesis');
+Route::view('/view-feedback', 'ManagePerformance.ViewFeedback');
+Route::view('/report', 'ManagePerformance.Report');
+Route::view('/view-platinum-list', 'CRMPprogressMonitor.ViewPlatinumList');
+Route::view('/add-weekly-focus-feedback', 'CRMPprogressMonitor.AddWeeklyFocusFeedback');
+Route::view('/add-draft-thesis-feedback', 'CRMPprogressMonitor.AddDraftThesisFeedback');
+Route::view('/crmp-profile', 'CRMPprogressMonitor.CRMPprofile');
+Route::view('/search-platinum', 'ManageCRMPplatinum.SearchPlatinum');
+Route::view('/assign-crmp', 'ManageCRMPplatinum.AssignCRMP');
+
+
+// ManagePerformance Routes
+Route::prefix('manage-performance')->group(function() {
+    Route::get('new-draft-thesis', [App\Http\Controllers\DraftThesisController::class, 'create'])->name('draft_thesis.create');
+    Route::post('new-draft-thesis', [App\Http\Controllers\DraftThesisController::class, 'store'])->name('draft_thesis.store');
+    Route::get('view-draft-theses', [App\Http\Controllers\DraftThesisController::class, 'index'])->name('draft_thesis.index');
+
+    Route::get('new-weekly-focus', [App\Http\Controllers\WeeklyFocusController::class, 'create'])->name('weekly_focus.create');
+    Route::post('new-weekly-focus', [App\Http\Controllers\WeeklyFocusController::class, 'store'])->name('weekly_focus.store');
+    Route::get('view-weekly-focus', [App\Http\Controllers\WeeklyFocusController::class, 'index'])->name('weekly_focus.index');
+});
+
+// CRMPprogressMonitor Routes
+Route::prefix('crmp-progress-monitor')->group(function() {
+    Route::get('view-platinum-list', [App\Http\Controllers\WeeklyFocusController::class, 'index'])->name('view_platinum_list.index');
+    Route::post('add-weekly-focus-feedback', [App\Http\Controllers\WeeklyFocusController::class, 'addFeedback'])->name('weekly_focus.add_feedback');
+    Route::post('add-draft-thesis-feedback', [App\Http\Controllers\DraftThesisController::class, 'addFeedback'])->name('draft_thesis.add_feedback');
+    Route::get('crmp-profile', [App\Http\Controllers\WeeklyFocusController::class, 'profile'])->name('crmp_profile.index');
+});
+
+// ManageCRMPplatinum Routes
+Route::prefix('manage-crmp-platinum')->group(function() {
+    Route::get('search-platinum', [App\Http\Controllers\WeeklyFocusController::class, 'searchPlatinum'])->name('search_platinum.index');
+    Route::post('assign-crmp', [App\Http\Controllers\DraftThesisController::class, 'assignCRMP'])->name('assign_crmp.assign');
+});
