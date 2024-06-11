@@ -1,8 +1,44 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create Draft Thesis</title>
+    <style>
+        .content {
+            text-align: center;
+        }
+        .form-container-adddraft {
+            width: 50%;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .btn-save-adddraft {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .btn-save-adddraft:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 @extends('layouts.master')
@@ -11,7 +47,7 @@
 <div class="content">
     <h2 class="page-title">Create Draft Thesis</h2>
     <div class="form-container-adddraft">
-        <form action="{{ route('draft_thesis.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('draft_thesis.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="dt_title">Thesis Title:</label>
@@ -41,9 +77,10 @@
                     <span class="error">{{ $message }}</span>
                 @enderror
             </div>
-            <div class="form-group">
-                <label for="dt_prep_days">Preparation Day:</label>
-                <input type="date" id="dt_prep_days" name="dt_prep_days" value="{{ old('dt_prep_days') }}" required>
+            <!-- No need to input preparation days manually -->
+            <div class="form-group" style="display:none;">
+                <label for="dt_prep_days">Preparation Days:</label>
+                <input type="number" id="dt_prep_days" name="dt_prep_days" value="{{ old('dt_prep_days') }}" readonly>
                 @error('dt_prep_days')
                     <span class="error">{{ $message }}</span>
                 @enderror
@@ -67,6 +104,34 @@
     </div>
 </div>
 @endsection
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const completionDateInput = document.getElementById('dt_complete_date');
+        const preparationDaysInput = document.getElementById('dt_prep_days');
+
+        completionDateInput.addEventListener('change', () => {
+            // Assume previous completion date is available
+            const previousCompletionDate = '{{ $previousCompleteDate ?? '' }}';
+            if (previousCompletionDate) {
+                const previousDate = new Date(previousCompletionDate);
+                const currentDate = new Date(completionDateInput.value);
+                let prepDays = 0;
+                let date = new Date(previousDate);
+
+                while (date < currentDate) {
+                    date.setDate(date.getDate() + 1);
+                    if (date.getDay() !== 0) { // Exclude Sundays
+                        prepDays++;
+                    }
+                }
+                preparationDaysInput.value = prepDays;
+            } else {
+                preparationDaysInput.value = 0; // Default value if no previous date
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -99,42 +99,44 @@ Route::get('/ViewDraftThesis', function () {
     return view('ViewDraftThesis');
 })->name('ViewDraftThesis');*/
 
-Route::view('/new-weekly-focus', 'ManagePerformance.NewWeeklyFocusForm');
-Route::view('/view-weekly-focus', 'ManagePerformance.ViewWeeklyFocus');
-Route::view('/edit-weekly-focus', 'ManagePerformance.EditWeeklyFocus');
-Route::view('/new-draft-thesis', 'ManagePerformance.NewDraftThesisForm');
-Route::view('/view-draft-thesis', 'ManagePerformance.ViewDraftThesis');
-Route::view('/view-feedback', 'ManagePerformance.ViewFeedback');
-Route::view('/report', 'ManagePerformance.Report');
-Route::view('/view-platinum-list', 'CRMPprogressMonitor.ViewPlatinumList');
-Route::view('/add-weekly-focus-feedback', 'CRMPprogressMonitor.AddWeeklyFocusFeedback');
-Route::view('/add-draft-thesis-feedback', 'CRMPprogressMonitor.AddDraftThesisFeedback');
-Route::view('/crmp-profile', 'CRMPprogressMonitor.CRMPprofile');
-Route::view('/search-platinum', 'ManageCRMPplatinum.SearchPlatinum');
-Route::view('/assign-crmp', 'ManageCRMPplatinum.AssignCRMP');
-
+// Static views
+Route::view('/NewWeeklyFocusForm', 'ManagePerformance.NewWeeklyFocusForm');
+Route::view('/ViewWeeklyFocus', 'ManagePerformance.ViewWeeklyFocus');
+Route::view('/EditWeeklyFocus', 'ManagePerformance.EditWeeklyFocus');
+Route::view('/NewDraftThesisForm', 'ManagePerformance.NewDraftThesisForm');
+Route::view('/ViewDraftThesis', 'ManagePerformance.ViewDraftThesis');
+Route::view('/ViewFeedback', 'ManagePerformance.ViewFeedback');
+Route::view('/Report', 'ManagePerformance.Report');
+Route::view('/ViewPlatinumList', 'CRMPprogressMonitor.ViewPlatinumList');
+Route::view('/AddWeeklyFocusFeedback', 'CRMPprogressMonitor.AddWeeklyFocusFeedback');
+Route::view('/AddDraftThesisFeedback', 'CRMPprogressMonitor.AddDraftThesisFeedback');
+Route::view('/CRMPprofile', 'CRMPprogressMonitor.CRMPprofile');
+Route::view('/SearchPlatinum', 'ManageCRMPplatinum.SearchPlatinum');
+Route::view('/AssignCRMP', 'ManageCRMPplatinum.AssignCRMP');
+Route::view('/ManagePerformanceHome', 'ManagePerformance.ManagePerformanceHome');
 
 // ManagePerformance Routes
 Route::prefix('manage-performance')->group(function() {
-    Route::get('new-draft-thesis', [App\Http\Controllers\DraftThesisController::class, 'create'])->name('draft_thesis.create');
-    Route::post('new-draft-thesis', [App\Http\Controllers\DraftThesisController::class, 'store'])->name('draft_thesis.store');
-    Route::get('view-draft-theses', [App\Http\Controllers\DraftThesisController::class, 'index'])->name('draft_thesis.index');
+    Route::get('new-draft-thesis', [DraftThesisController::class, 'create'])->name('draft_thesis.create');
+    Route::post('new-draft-thesis', [DraftThesisController::class, 'store'])->name('draft_thesis.store');
+    Route::get('view-draft-thesis', [DraftThesisController::class, 'index'])->name('draft_thesis.index');
+    Route::delete('delete-draft-thesis/{id}', [DraftThesisController::class, 'destroy'])->name('draft_thesis.destroy');
 
-    Route::get('new-weekly-focus', [App\Http\Controllers\WeeklyFocusController::class, 'create'])->name('weekly_focus.create');
-    Route::post('new-weekly-focus', [App\Http\Controllers\WeeklyFocusController::class, 'store'])->name('weekly_focus.store');
-    Route::get('view-weekly-focus', [App\Http\Controllers\WeeklyFocusController::class, 'index'])->name('weekly_focus.index');
+    Route::get('new-weekly-focus', [WeeklyFocusController::class, 'create'])->name('weekly_focus.create');
+    Route::post('new-weekly-focus', [WeeklyFocusController::class, 'store'])->name('weekly_focus.store');
+    Route::get('view-weekly-focus', [WeeklyFocusController::class, 'index'])->name('weekly_focus.index');
 });
 
 // CRMPprogressMonitor Routes
 Route::prefix('crmp-progress-monitor')->group(function() {
-    Route::get('view-platinum-list', [App\Http\Controllers\WeeklyFocusController::class, 'index'])->name('view_platinum_list.index');
-    Route::post('add-weekly-focus-feedback', [App\Http\Controllers\WeeklyFocusController::class, 'addFeedback'])->name('weekly_focus.add_feedback');
-    Route::post('add-draft-thesis-feedback', [App\Http\Controllers\DraftThesisController::class, 'addFeedback'])->name('draft_thesis.add_feedback');
-    Route::get('crmp-profile', [App\Http\Controllers\WeeklyFocusController::class, 'profile'])->name('crmp_profile.index');
+    Route::get('view-platinum-list', [WeeklyFocusController::class, 'index'])->name('view_platinum_list.index');
+    Route::post('add-weekly-focus-feedback', [WeeklyFocusController::class, 'addFeedback'])->name('weekly_focus.add_feedback');
+    Route::post('add-draft-thesis-feedback', [DraftThesisController::class, 'addFeedback'])->name('draft_thesis.add_feedback');
+    Route::get('crmp-profile', [WeeklyFocusController::class, 'profile'])->name('crmp_profile.index');
 });
 
 // ManageCRMPplatinum Routes
 Route::prefix('manage-crmp-platinum')->group(function() {
-    Route::get('search-platinum', [App\Http\Controllers\WeeklyFocusController::class, 'searchPlatinum'])->name('search_platinum.index');
-    Route::post('assign-crmp', [App\Http\Controllers\DraftThesisController::class, 'assignCRMP'])->name('assign_crmp.assign');
+    Route::get('search-platinum', [WeeklyFocusController::class, 'searchPlatinum'])->name('search_platinum.index');
+    Route::post('assign-crmp', [DraftThesisController::class, 'assignCRMP'])->name('assign_crmp.assign');
 });
