@@ -46,7 +46,7 @@ Route::get('/expert/filterReport', [ExpertDomainController::class, 'filterReport
 
 
 //MODULE 3 - DEYLAN SHIVA (CB22138)
-Route::get('/PublicationPersonal', [PublicationController::class, 'index'])->name('PublicationPersonal.ViewOwnPublicationList');
+Route::get('/PublicationPersonal/ViewOwnPublicationList', [PublicationController::class, 'showOwnPublicationList'])->name('PublicationPersonal.ViewOwnPublicationList');
 Route::post('/PublicationPersonal/store', [PublicationController::class, 'store'])->name('PublicationPersonal.store'); 
 Route::get('/PublicationPersonal/NewPublicationForm', [PublicationController::class, 'create'])->name('PublicationPersonal.NewPublicationForm'); 
 Route::get('/PublicationAll/ViewPublicationList', [PublicationController::class, 'index'])->name('PublicationAll.ViewPublicationList'); 
@@ -54,6 +54,8 @@ Route::get('/PublicationPersonal/ViewPublication/{id}', [PublicationController::
 Route::get('/PublicationPersonal/EditPublication/{id}', [PublicationController::class, 'edit'])->name('PublicationPersonal.EditPublication');
 //Route::put('/PublicationPersonal/update', [PublicationController::class, 'update'])->name('PublicationPersonal.update');
 Route::put('/PublicationPersonal/update/{id}', [PublicationController::class, 'update'])->name('PublicationPersonal.update');
+Route::get('/PublicationAll/ViewPublicationDetails/{id}', [PublicationController::class, 'showPublicationDetails'])->name('PublicationAll.ViewPublicationDetails');
+Route::get('/PublicationAll/ViewReportOfPublication', [PublicationController::class, 'generateReport'])->name('PublicationAll.ViewReportOfPublication');
 
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Publication;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class PublicationController extends Controller
@@ -16,6 +17,16 @@ class PublicationController extends Controller
         //dd($publications); // Dump and die to check the retrieved data
 
         return view('PublicationAll.ViewPublicationList',['publications' => Publication::latest()->get()]);
+        //return view('Publication.index', ['publications' => Publication::get()]);
+        //return view('posts.index',['posts' => Publication::with('user')->latest()->get()]);
+    }
+
+    public function showOwnPublicationList()
+    {
+        //$publications = Publication::all();
+        //dd($publications); // Dump and die to check the retrieved data
+
+        return view('PublicationPersonal.ViewOwnPublicationList',['publications' => Publication::latest()->get()]);
         //return view('Publication.index', ['publications' => Publication::get()]);
         //return view('posts.index',['posts' => Publication::with('user')->latest()->get()]);
     }
@@ -115,5 +126,23 @@ class PublicationController extends Controller
         $publication = Publication::where('Publication_ID', $id)->firstOrFail();
         return view('PublicationPersonal.ViewPublication', compact('publication'));
     }   
+
+    public function showPublicationDetails($id)
+    {
+        $publication = Publication::where('Publication_ID', $id)->firstOrFail();
+        return view('PublicationPersonal.ViewPublication', compact('publication'));
+    }   
+
+    public function generateReport()
+    {
+        $reportData = DB::table('publications')
+                        ->select(DB::raw('YEAR(Publication_Date) as year'), DB::raw('count(*) as total'))
+                        ->groupBy(DB::raw('YEAR(Publication_Date)'))
+                        ->get();
+
+        return view('PublicationAll.ViewReportOfPublication', compact('reportData'));
+    }
+
+
 }
 
