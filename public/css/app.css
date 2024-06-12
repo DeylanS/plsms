@@ -303,10 +303,7 @@ input[type="number"] {
     border-radius: 15px;
     padding: 20px;
     margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-items: center;
+    text-align: center;
     width: 80%;
     margin: auto;
 }
@@ -335,10 +332,14 @@ input[type="number"] {
 
 .focus-one {
     display: flex;
+    width: 80%;
+    margin-left: 27%;
 }
 
 .focus-two {
     display: flex;
+    width: 80%;
+    margin-left: 27%;
 }
 
 .focus-block {
@@ -359,7 +360,7 @@ input[type="number"] {
     display: block;
     margin: 10px auto;
     padding: 10px;
-    width: 80%;
+    width: 100%;
     border: 2px solid black;
     border-radius: 5px;
 }

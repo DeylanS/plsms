@@ -55,7 +55,48 @@
         </div>
 
         <div class="container">
-
+            <h2 class="page-title">View Draft Thesis</h2>
+            <div class="list-container">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <br>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Start Date</th>
+                            <th>Complete Date</th>
+                            <th>Focus Info</th>
+                            <th>Admin Info</th>
+                            <th>Social Info</th>
+                            <th>Recovery Info</th>
+                            <th>Feedback</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr style="padding:20px;">
+                                <td  style="padding:20px;"> 1 </td>
+                                <td  style="padding:20px;"> 17/6/2024</td>
+                                <td  style="padding:20px;"> 23/6/2024</td>
+                                <td  style="padding:20px;"> Focus </td>
+                                <td  style="padding:20px;"> Admin </td>
+                                <td  style="padding:20px;"> Social </td>
+                                <td  style="padding:20px;"> Recovery </td>
+                                <td  style="padding:20px;"> 
+                                    <form method="POST" action="">
+                                    @csrf
+                                        <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br><br>
+                                        <input type="submit" name="submit" value="Submit">
+                                    </form>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         
     <style>

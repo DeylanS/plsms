@@ -55,7 +55,42 @@
         </div>
 
         <div class="container">
-
+        <h4 class="page-title">View Draft Thesis</h4>
+            <div class="list-container">
+            <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Draft Number</th>
+                            <th>Start Date</th>
+                            <th>Complete Date</th>
+                            <th>Pages Number</th>
+                            <th>DDC</th>
+                            <th>Preparation Days</th> <!-- Add this column -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td> 1 </td>
+                                <td> Machine Learning </td>
+                                <td> 2 </td>
+                                <td> 3/6/2024 </td>
+                                <td> 1/7/2024</td>
+                                <td> 67 </td>
+                                <td> 28 </td>
+                                <td> 28</td> <!-- Display preparation days -->
+                                <td>
+                                    <form method="POST" action="">
+                                    @csrf
+                                        <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br><br>
+                                        <input type="submit" name="submit" value="Submit">
+                                    </form>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         
     <style>
