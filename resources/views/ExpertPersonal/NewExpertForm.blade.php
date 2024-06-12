@@ -58,6 +58,19 @@
                         <table class="form-table">
                             <tr>
                                 <td style="width: 20%;">
+                                    Platinum ID
+                                </td>
+                                <td class="form-column"> 
+                                    <select name="platinum_id" id="platinum_id">
+                                        <option value="">Select Platinum ID</option>
+                                        @foreach ($platinumData as $platinum)
+                                            <option value="{{ $platinum->Platinum_ID }}">{{ $platinum->Platinum_ID }}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%;">
                                     Name
                                 </td>
                                 <td class="form-column"> 
