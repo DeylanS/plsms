@@ -81,12 +81,13 @@ class DraftThesisController extends Controller
     {
         // Retrieve the selected month from the request
         $selectedMonth = $request->input('month');
-    
+
         // Query the draft theses for the selected month
         $draftTheses = DraftThesis::whereMonth('dt_complete_date', $selectedMonth)->get();
-    
-        // Render the report content directly within the view
-        return view('ManagePerformance.Report', ['draftTheses' => $draftTheses]);
+
+        // Pass the retrieved data to the view
+        return view('ManagePerformance.Report', compact('draftTheses'));
     }
+
     
 }
