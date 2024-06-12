@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Weekly_Focus', function (Blueprint $table) {
+        Schema::create('weekly_focus', function (Blueprint $table) {
             $table->increments('WF_ID');
-            $table->date('WF_StartDate');
+            $table->date('WF_StartDate')->default(now()); // Set default value to current date
             $table->date('WF_CompleteDate');
             $table->string('WF_FocusInfo');
             $table->string('WF_AdminInfo');
@@ -29,7 +29,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Weekly_Focus');
+        Schema::dropIfExists('weekly_focus');
     }
 };
 

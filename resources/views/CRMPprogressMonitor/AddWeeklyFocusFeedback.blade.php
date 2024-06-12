@@ -5,31 +5,127 @@
     <title>Document</title>
 </head>
 <body>
-@extends('layouts.master')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search Platinum</title>
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+            <div class="header-left">
+                <h3 class="ml-5 fw-500">PLATINUMSPHERE</h3>
+                <img class="img-sm" src="https://iconape.com/wp-content/png_logo_vector/sphere.png">
+            </div>
+            <div class="header-right">
+                <h3 class="mr-5 fw-500">STAFF</h3>
+            </div>
+        </div>
 
-@section('content')
-<div class="content">
-    <h2 class="page-title">Add Weekly Focus Feedback</h2>
-    <div class="feedback-section">
-        <form action="{{ route('weekly_focus_feedback.store') }}" method="POST">
-            @csrf
-            <div class="form-group">
-                <label for="focus_id">Weekly Focus:</label>
-                <select id="focus_id" name="focus_id">
-                    @foreach($weeklyFocuses as $focus)
-                        <option value="{{ $focus->id }}">{{ $focus->WF_FocusInfo }}</option>
-                    @endforeach
-                </select>
+        <div class="side-nav">
+            <div class="nav-profile">
+                <br>
+                <p class="menu-header"><strong> PROFILE </strong></p>
+                <p><a class="side-nav-link" href="#">PERSONAL</a> <p>
+                <p><a class="side-nav-link" href="#">LIST USER</a><p>
             </div>
-            <div class="form-group">
-                <label for="feedback">Feedback:</label>
-                <textarea id="feedback" name="feedback" required></textarea>
+            <div class="nav-expert-domain">
+            <p class="menu-header"><strong> EXPERT DOMAIN </strong></p>
+            <p><a class="side-nav-link" href="#">NEW EXPERT</a> </p>
+            <p><a class="side-nav-link" href="#">LIST OWN EXPERT</a></p>
+            <p><a class="side-nav-link" href="#">LIST ALL EXPERT</a></p>
+            <p><a class="side-nav-link" href="#">REPORT</a></p>
             </div>
-            <button type="submit" class="btn-save">Submit</button>
-        </form>
-    </div>
-</div>
-@endsection
+            <div class="nav-expert-domain">
+            <p class="menu-header"><strong> PUBLICATION </strong></p>
+            <p><a class="side-nav-link" href="#">NEW PUBLICATION</a></p> 
+            <p><a class="side-nav-link" href="#">LIST OWN PUBLICATION</a></p>
+            <p><a class="side-nav-link" href="#">LIST ALL PUBLICATION</a></p>
+            </div>
+            <div class="nav-progress-monitor">
+                <p class="menu-header"><strong> PROGRESS MONITORING </strong></p>
+                <p><a class="side-nav-link" href="/CRMPprofile">CRMP PROFILE</a></p>
+                <p><a class="side-nav-link" href="/ViewPlatinumList">MANAGE PLATINUM</a></p>
+                <p><a class="side-nav-link" href="#">REPORT</a></p>
+            </div>
+
+            <button type="button" class="btn btn-logout btn-lg"> LOG OUT </button>
+        </div>
+
+        <div class="container">
+            <h2 class="page-title">View Draft Thesis</h2>
+            <div class="list-container">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <br>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Start Date</th>
+                            <th>Complete Date</th>
+                            <th>Focus Info</th>
+                            <th>Admin Info</th>
+                            <th>Social Info</th>
+                            <th>Recovery Info</th>
+                            <th>Feedback</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr style="padding:20px;">
+                                <td  style="padding:20px;"> 1 </td>
+                                <td  style="padding:20px;"> 17/6/2024</td>
+                                <td  style="padding:20px;"> 23/6/2024</td>
+                                <td  style="padding:20px;"> Focus </td>
+                                <td  style="padding:20px;"> Admin </td>
+                                <td  style="padding:20px;"> Social </td>
+                                <td  style="padding:20px;"> Recovery </td>
+                                <td  style="padding:20px;"> 
+                                    <form method="POST" action="">
+                                    @csrf
+                                        <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br><br>
+                                        <input type="submit" name="submit" value="Submit">
+                                    </form>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    <style>
+
+    .page-title{
+        text-align:center;
+    }
+
+    .btn{
+        background-color: #801f38;
+    }
+
+    .header{
+        background-color: #ba2049;
+    }
+    
+    .side-nav{
+        background-color: #ba2049;
+    }
+    .container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f06086; /* Light green background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    </style>
 
 </body>
 </html>
