@@ -1,8 +1,71 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>View Weekly Focus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .page-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .list-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .edit-btn, .delete-button {
+            background-color: #007bff;
+            color: white;
+            padding: 6px 12px;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .delete-button {
+            background-color: #dc3545;
+        }
+        .edit-btn:hover, .delete-button:hover {
+            opacity: 0.8;
+        }
+        .delete-button {
+            padding: 6px 10px;
+        }
+        form {
+            display: inline;
+        }
+    </style>
 </head>
 <body>
 @extends('layouts.master')
@@ -31,7 +94,7 @@
                 <tbody>
                     @foreach ($weeklyFocuses as $weeklyFocus)
                         <tr>
-                            <td>{{ $weeklyFocus->id }}</td>
+                            <td>{{ $weeklyFocus->WF_ID }}</td>
                             <td>{{ $weeklyFocus->WF_StartDate }}</td>
                             <td>{{ $weeklyFocus->WF_CompleteDate }}</td>
                             <td>{{ $weeklyFocus->WF_FocusInfo }}</td>
@@ -41,8 +104,8 @@
                             <td>{{ $weeklyFocus->WF_Feedback }}</td>
                             <td>
                                 <div class="action-buttons">
-                                    <a href="{{ route('weekly_focus.edit', $weeklyFocus->id) }}" class="edit-btn">Edit</a>
-                                    <form action="{{ route('weekly_focus.destroy', $weeklyFocus->id) }}" method="POST">
+                                    <a href="{{ route('weekly_focus.edit', ['id' => $weeklyFocus->WF_ID]) }}" class="edit-btn">Edit</a>
+                                    <form action="{{ route('weekly_focus.destroy', ['id' => $weeklyFocus->WF_ID]) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="delete-button">Delete</button>
@@ -57,5 +120,6 @@
     @endif
 </div>
 @endsection
+
 </body>
 </html>

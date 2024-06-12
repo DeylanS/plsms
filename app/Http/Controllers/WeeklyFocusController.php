@@ -33,6 +33,12 @@ class WeeklyFocusController extends Controller
         return redirect()->route('weekly_focus.index')->with('success', 'Weekly Focus created successfully.');
     }
 
+    public function edit($id)
+    {
+        $weeklyFocus = WeeklyFocus::findOrFail($id);
+        return view('ManagePerformance.EditWeeklyFocus', compact('weeklyFocus'));
+    }
+
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -42,25 +48,23 @@ class WeeklyFocusController extends Controller
             'WF_RecoveryInfo' => 'required|string',
         ]);
 
-        $weeklyFocus = WeeklyFocus::find($id);
+        $weeklyFocus = WeeklyFocus::findOrFail($id);
 
-        if (!$weeklyFocus) {
-            return redirect()->route('weekly_focus.index')->with('error', 'Weekly focus item not found.');
-        }
-
-        $weeklyFocus->update([
-            'WF_FocusInfo' => $request->input('WF_FocusInfo'),
-            'WF_AdminInfo' => $request->input('WF_AdminInfo'),
-            'WF_SocialInfo' => $request->input('WF_SocialInfo'),
-            'WF_RecoveryInfo' => $request->input('WF_RecoveryInfo'),
-        ]);
+        $weeklyFocus->update($request->all());
 
         return redirect()->route('weekly_focus.index')->with('success', 'Weekly focus item updated successfully.');
     }
-    public function edit($id)
+
+    public function destroy($id)
     {
         $weeklyFocus = WeeklyFocus::findOrFail($id);
-        return view('ManagePerformance.EditWeeklyFocus', compact('weeklyFocus'));
+        $weeklyFocus->delete();
+
+        return redirect()->route('weekly_focus.index')->with('success', 'Weekly Focus deleted successfully.');
     }
+
+    
 }
+
+
 

@@ -11,7 +11,7 @@
 <div class="content">
     <h4 class="page-title">Edit Weekly Focus</h4>
     <div class="focus-section">
-            <form action="{{ route('weekly_focus.update', $weeklyFocus->id) }}" method="POST">
+        <form action="{{ route('weekly_focus.update', $weeklyFocus->WF_ID) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="focus-content">
@@ -35,6 +35,7 @@
     </div>
 </div>
 @endsection
+
 
 </body>
 </html>

@@ -41,8 +41,8 @@
         <div class="nav-progress-monitor">
             <p class="menu-header"><strong> PROGRESS MONITORING </strong></p>
             <p><a class="side-nav-link" href="../CRMPprofile">CRMP PROFILE</a> </p>
-            <p><a class="side-nav-link" href="../ManagePerformanceHome">MANAGE PERFORMANCE</a></p>
-            <p><a class="side-nav-link" href="../Report">REPORT</a></p>
+            <p><a class="side-nav-link" href="{{ route('manage_performance.home') }}">MANAGE PERFORMANCE</a></p>
+            <p><a class="side-nav-link" href="{{ route('report.generate') }}">REPORT</a></p>
         </div>
 
         <button type="button" class="btn btn-logout btn-lg"> LOG OUT </button>

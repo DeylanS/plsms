@@ -7,14 +7,35 @@
 <body>
 @extends('layouts.master')
 
-@section('content')
-<div class="content">
-    <h2 class="page-title">Report</h2>
-    <div class="report-section">
-        <!-- Add content for the report here -->
-    </div>
+<div class="report-section">
+    <h3>Monthly Draft Thesis Report</h3>
+    <p>Select a month:</p>
+    <form action="{{ route('report.generate') }}" method="GET">
+        <select name="month">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <!-- Add options for other months -->
+        </select>
+        <button type="submit">Generate Report</button>
+    </form>
+
+    @if ($draftTheses->isEmpty())
+        <p>No draft theses found for the selected month.</p>
+    @else
+        <ul>
+        @foreach ($draftTheses as $draftThesis)
+            <li>
+                <strong>Draft Number:</strong> {{ $draftThesis->draft_number }}<br>
+                <strong>Title:</strong> {{ $draftThesis->title }}<br>
+                <strong>Completion Date:</strong> {{ $draftThesis->completion_date }}<br>
+                <strong>Page:</strong> {{ $draftThesis->page }}
+            </li>
+        @endforeach
+        </ul>
+    @endif
+
 </div>
-@endsection
 
 </body>
 </html>

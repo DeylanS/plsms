@@ -77,4 +77,16 @@ class DraftThesisController extends Controller
         return $prepDays - 1; // Exclude the end date itself
     }
 
+    public function generate(Request $request)
+    {
+        // Retrieve the selected month from the request
+        $selectedMonth = $request->input('month');
+    
+        // Query the draft theses for the selected month
+        $draftTheses = DraftThesis::whereMonth('dt_complete_date', $selectedMonth)->get();
+    
+        // Render the report content directly within the view
+        return view('ManagePerformance.Report', ['draftTheses' => $draftTheses]);
+    }
+    
 }
