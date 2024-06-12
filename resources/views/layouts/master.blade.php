@@ -15,7 +15,7 @@
             <img class="img-sm" src="https://iconape.com/wp-content/png_logo_vector/sphere.png">
         </div>
         <div class="header-right">
-            <h3 class="mr-5 fw-500">NAME</h3>
+            <h3 class="mr-5 fw-500">PLATINUM</h3>
         </div>
     </div>
 

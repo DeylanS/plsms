@@ -20,7 +20,7 @@
                 <img class="img-sm" src="https://iconape.com/wp-content/png_logo_vector/sphere.png">
             </div>
             <div class="header-right">
-                <h3 class="mr-5 fw-500">NAME</h3>
+                <h3 class="mr-5 fw-500">STAFF</h3>
             </div>
         </div>
 
@@ -33,54 +33,62 @@
             </div>
             <div class="nav-progress-monitor">
                 <p class="menu-header"><strong> PROGRESS MONITORING </strong></p>
-                <p><a class="side-nav-link" href="{{ route('manage_performance.home') }}">MANAGE CRMP</a></p>
+                <p><a class="side-nav-link" href="/SearchPlatinum">MANAGE CRMP</a></p>
             </div>
 
             <button type="button" class="btn btn-logout btn-lg"> LOG OUT </button>
         </div>
         <div class="container">
-    <h2 class="page-title">Manage CRMP</h2>
-    <div class="search-section">
-        <form method="GET" class="form-inline">
-            <input type="text" name="platinum_name" placeholder="Platinum Name" class="form-control mr-2">
-            <select name="platinum_package" class="form-control mr-2">
-                <option value="">Platinum Package</option>
-                <!-- Add package options here -->
-            </select>
-            <select name="field" class="form-control mr-2">
-                <option value="">Field</option>
-                <!-- Add field options here -->
-            </select>
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-    </div>
+        <h2 class="page-title">Manage CRMP</h2>
+        <div class="search-section">
+            <form method="GET" class="form-inline">
+                <input type="text" name="platinum_name" placeholder="Platinum Name" class="form-control mr-2">
+                <select name="platinum_package" class="form-control mr-2">
+                    <option value="">Platinum Package</option>
+                    <!-- Add package options here -->
+                </select>
+                <select name="field" class="form-control mr-2">
+                    <option value="">Field</option>
+                    <!-- Add field options here -->
+                </select>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
 
-    <div class="search-results">
-        <ul class="list-group mt-3">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <div class="profile-info">
-                    <img src="https://via.placeholder.com/50" alt="Profile" class="rounded-circle">
-                    <div class="profile-text">
-                        <p>Zainal Bin Hassan</p>
-                        <p>Platinum Professorship</p>
-                        <p>Cyber Security</p>
+        <div class="search-results">
+            <ul class="list-group mt-3">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="profile-info">
+                        <img src="https://via.placeholder.com/50" alt="Profile" class="rounded-circle">
+                        <div class="profile-text">
+                            <p>Zainal Bin Hassan</p>
+                            <p>Platinum Professorship</p>
+                            <p>Cyber Security</p>
+                        </div>
                     </div>
-                </div>
-                <div class="action-buttons">
-                    <button class="btn btn-success mr-2">View Profile</button>
-                    <button class="btn btn-success">Appoint CRMP</button>
-                </div>
-            </li>
-            <!-- Repeat this list item for more users -->
-        </ul>
-    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-success mr-2">View Profile</button>
+                        <button class="btn btn-success">Appoint CRMP</button>
+                    </div>
+                </li>
+                <!-- Repeat this list item for more users -->
+            </ul>
+        </div>
 
-    <button type="button" class="btn btn-success mt-3">Assign to Platinum</button>
-    </div>
+        <button type="button" class="btn btn-success mt-3"><a href="/AssignCRMP">Assign to Platinum</a></button>
+        </div>
 
 
     <style>
-    
+
+    .page-title{
+        text-align:center;
+    }
+
+    .btn{
+        background-color: #33de76;
+    }
+
     .header{
         background-color: #3da867;
     }
