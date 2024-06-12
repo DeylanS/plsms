@@ -102,13 +102,13 @@ Route::get('/ViewDraftThesis', function () {
 })->name('ViewDraftThesis');*/
 
 // Static views
-Route::view('/NewWeeklyFocusForm', 'ManagePerformance.NewWeeklyFocusForm')->name('manage_performance.new_weekly_focus');
-Route::view('/ViewWeeklyFocus', 'ManagePerformance.ViewWeeklyFocus')->name('manage_performance.view_weekly_focus');
-Route::view('/EditWeeklyFocus', 'ManagePerformance.EditWeeklyFocus')->name('manage_performance.edit_weekly_focus');
-Route::view('/NewDraftThesisForm', 'ManagePerformance.NewDraftThesisForm')->name('manage_performance.new_draft_thesis');
-Route::view('/ViewDraftThesis', 'ManagePerformance.ViewDraftThesis')->name('manage_performance.view_draft_thesis');
-Route::view('/ViewFeedback', 'ManagePerformance.ViewFeedback')->name('manage_performance.view_feedback');
-Route::view('/Report', 'ManagePerformance.Report')->name('report.view');
+//Route::view('/NewWeeklyFocusForm', 'ManagePerformance.NewWeeklyFocusForm')->name('manage_performance.new_weekly_focus');
+//Route::view('/ViewWeeklyFocus', 'ManagePerformance.ViewWeeklyFocus')->name('manage_performance.view_weekly_focus');
+//Route::view('/EditWeeklyFocus', 'ManagePerformance.EditWeeklyFocus')->name('manage_performance.edit_weekly_focus');
+//Route::view('/NewDraftThesisForm', 'ManagePerformance.NewDraftThesisForm')->name('manage_performance.new_draft_thesis');
+//Route::view('/ViewDraftThesis', 'ManagePerformance.ViewDraftThesis')->name('manage_performance.view_draft_thesis');
+//Route::view('/ViewFeedback', 'ManagePerformance.ViewFeedback')->name('manage_performance.view_feedback');
+//Route::view('/Report', 'ManagePerformance.Report')->name('report.view');
 Route::view('/ViewPlatinumList', 'CRMPprogressMonitor.ViewPlatinumList')->name('crmp_progress_monitor.view_platinum_list');
 Route::view('/AddWeeklyFocusFeedback', 'CRMPprogressMonitor.AddWeeklyFocusFeedback')->name('crmp_progress_monitor.add_weekly_focus_feedback');
 Route::view('/AddDraftThesisFeedback', 'CRMPprogressMonitor.AddDraftThesisFeedback')->name('crmp_progress_monitor.add_draft_thesis_feedback');
