@@ -12,17 +12,14 @@ use App\Http\Controllers\ManageCRMPPlatinumController;
 use Illuminate\Support\Facades\Route;
 
 //<<<<<<< HEAD
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [PublicationController::class, 'create'])->name('PublicationPersonal.NewPublicationForm'); 
 
 //======= HEAD
 use App\Http\Controllers\HomeController;
 
 //Route::redirect('/', '/home');
 
-Route::get('/home', [HomeController::class, 'index']);
+
 
 //Route::get('/', function () {
 // <<<<<<< HEAD
@@ -52,10 +49,13 @@ Route::get('/PublicationPersonal/NewPublicationForm', [PublicationController::cl
 Route::get('/PublicationAll/ViewPublicationList', [PublicationController::class, 'index'])->name('PublicationAll.ViewPublicationList'); 
 Route::get('/PublicationPersonal/ViewPublication/{id}', [PublicationController::class, 'showPublication'])->name('PublicationPersonal.ViewPublication');
 Route::get('/PublicationPersonal/EditPublication/{id}', [PublicationController::class, 'edit'])->name('PublicationPersonal.EditPublication');
-//Route::put('/PublicationPersonal/update', [PublicationController::class, 'update'])->name('PublicationPersonal.update');
+Route::put('/PublicationPersonal/update', [PublicationController::class, 'update'])->name('PublicationPersonal.update');
 Route::put('/PublicationPersonal/update/{id}', [PublicationController::class, 'update'])->name('PublicationPersonal.update');
 Route::get('/PublicationAll/ViewPublicationDetails/{id}', [PublicationController::class, 'showPublicationDetails'])->name('PublicationAll.ViewPublicationDetails');
 Route::get('/PublicationAll/ViewReportOfPublication', [PublicationController::class, 'generateReport'])->name('PublicationAll.ViewReportOfPublication');
+Route::delete('/PublicationPersonal/DeletePublication/{id}', [PublicationController::class, 'destroy'])->name('PublicationPersonal.DeletePublication');
+
+
 
 
 

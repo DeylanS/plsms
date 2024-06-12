@@ -21,12 +21,23 @@ class PublicationController extends Controller
         //return view('posts.index',['posts' => Publication::with('user')->latest()->get()]);
     }
 
+    public function create()
+    {
+        $mentors = DB::table('mentor')
+            ->join('user', 'mentor.User_ID', '=', 'user.User_ID')
+            ->select('mentor.Mentor_ID', 'user.User_FullName')
+            ->get();
+        
+        return view('PublicationPersonal.NewPublicationForm', compact('mentors'));
+    }
+
+
     public function showOwnPublicationList()
     {
         //$publications = Publication::all();
         //dd($publications); // Dump and die to check the retrieved data
 
-        return view('PublicationPersonal.ViewOwnPublicationList',['publications' => Publication::latest()->get()]);
+        return view('PublicationPersonal.ViewOwnPublicationList',['publications' => Publication::where('User_ID', 1)->latest()->get()]);
         //return view('Publication.index', ['publications' => Publication::get()]);
         //return view('posts.index',['posts' => Publication::with('user')->latest()->get()]);
     }
@@ -34,10 +45,10 @@ class PublicationController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    /*public function create()
     {
         return view('PublicationPersonal.NewPublicationForm');
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -116,21 +127,32 @@ class PublicationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Publication $post)
+    public function destroy($id)
     {
-        //
+        $publication = Publication::findOrFail($id);
+        $publication->delete();
+
+        return redirect(route('PublicationPersonal.ViewOwnPublicationList'))->with('successfulDelete', 'Data Deleted');
     }
+
 
     public function showPublication($id)
     {
-        $publication = Publication::where('Publication_ID', $id)->firstOrFail();
+        //$publication = Publication::where('Publication_ID', $id)->firstOrFail();
+        $publication = DB::table('publications')
+        ->join('mentor', 'publications.Mentor_ID', '=', 'mentor.Mentor_ID')
+        ->join('user', 'mentor.User_ID', '=', 'user.User_ID')
+        ->where('publications.Publication_ID', $id)
+        ->select('publications.*', 'user.User_FullName as Mentor_Name')
+        ->first();
         return view('PublicationPersonal.ViewPublication', compact('publication'));
+        
     }   
 
     public function showPublicationDetails($id)
     {
         $publication = Publication::where('Publication_ID', $id)->firstOrFail();
-        return view('PublicationPersonal.ViewPublication', compact('publication'));
+        return view('PublicationAll.ViewPublicationDetails', compact('publication'));
     }   
 
     public function generateReport()
