@@ -41,6 +41,18 @@ class PublicationController extends Controller
         //return view('Publication.index', ['publications' => Publication::get()]);
         //return view('posts.index',['posts' => Publication::with('user')->latest()->get()]);
     }
+    public function searchPublications(Request $request)
+    {
+        $search = $request->input('search');
+        $publications = DB::table('publications')
+            ->join('mentor', 'publications.Mentor_ID', '=', 'mentor.Mentor_ID')
+            ->join('user', 'mentor.User_ID', '=', 'user.User_ID')
+            ->where('publications.Publication_Title', 'LIKE', "%{$search}%")
+            ->select('publications.*', 'user.User_FullName as Mentor_Name')
+            ->get();
+            
+        return view('PublicationAll.ViewPublicationList', compact('publications'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -147,7 +159,7 @@ class PublicationController extends Controller
         ->first();
         return view('PublicationPersonal.ViewPublication', compact('publication'));
         
-    }   
+    }
 
     public function showPublicationDetails($id)
     {
