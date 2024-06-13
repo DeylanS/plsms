@@ -50,4 +50,9 @@
     <div class="content">
         @yield('content')
     </div>
+    <style>
+        .side-nav .side-nav-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </body>

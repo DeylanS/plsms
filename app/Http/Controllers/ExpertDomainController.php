@@ -4,20 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Models\Expert;
 use App\Models\Expert_Publication;
+use App\Models\Platinum;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class ExpertDomainController extends Controller
 {
 
     // ===========================================================================================
-    // ExpertAll
+    // ExpertOwn
     // ===========================================================================================
     public function NewExpertView() {
-        return view('ExpertPersonal.NewExpertForm');
+        
+        $platinumData = Platinum::all();
+
+        return view('ExpertPersonal.NewExpertForm', ['platinumData' => $platinumData]);
     }
 
     public function OwnExpertListView() {
-        return view('ExpertPersonal.ViewOwnExpertList',['expert' => Expert::latest()->get()]);
+        $selectedPlatinumId = session('selected_platinum_id');
+
+        // Query experts based on the selected Platinum ID
+        $expert = Expert::where('Platinum_ID', $selectedPlatinumId)->latest()->get();
+
+        // Pass the experts data to the view
+        return view('ExpertPersonal.ViewOwnExpertList', ['expert' => $expert]);
     }
 
     public function DetailExpertView($Expert_ID) {
@@ -60,6 +71,7 @@ class ExpertDomainController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'platinum_id'=>'required|exists:platinum,Platinum_ID',
             'expertName' => 'required|string|max:255',
             'expertGender' => 'required|string|max:255',
             'expertUni' => 'required|string|max:255',
@@ -73,7 +85,10 @@ class ExpertDomainController extends Controller
             'publications.*.file' => 'nullable|file|mimes:pdf,doc,docx',
         ]);
 
+        Session::put('selected_platinum_id', $request->input('platinum_id'));
+
         $expert = new Expert();
+        $expert->Platinum_ID = $request->input('platinum_id');
         $expert->Expert_Name = $request->input('expertName');
         $expert->Expert_Gender = $request->input('expertGender');
         $expert->Expert_University = $request->input('expertUni');
@@ -98,7 +113,13 @@ class ExpertDomainController extends Controller
             $expertPaper->save();
         }
 
-        return redirect()->back()->with('success', 'New expert has been successfully added!');
+        // return redirect()->back()->with('success', 'New expert has been successfully added!');
+
+         // Optionally, flash a success message to session
+         Session::flash('success', 'Expert and associated publications have been successfully added!');
+
+         // Redirect to a success page or back to form
+         return redirect()->back();
     }
 
     public function deleteExpert($Expert_ID)

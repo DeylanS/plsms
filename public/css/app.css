@@ -28,7 +28,16 @@ a {
     z-index: 999;
 }
 
+.header.default {
+    background-color: #ffde59;
+}
+
+.header.mentor {
+    background-color: #ba2049;
+}
+
 .header-right {
+    display: flex;
     position: absolute;
     right: 0;
 }
@@ -60,6 +69,14 @@ a {
     font-size: small;
 }
 
+.side-nav.default {
+    background-color: #ffde59;
+}
+
+.side-nav.mentor {
+    background-color: #ba2049;
+}
+
 .side-nav-link {
     color: black;
 }
@@ -83,6 +100,14 @@ a {
     width: 90px;
 }
 
+.btn-logout.default {
+    background-color: #ff914d;
+}
+
+.btn-logout.mentor {
+    background-color: #824b5a;
+}
+
 .content {
     margin-left: 10%;
     text-align: center;
@@ -94,6 +119,14 @@ a {
     background-color: #FFF2BF;
     border-radius: 15px;
     font-size: small;
+}
+
+.form-new-expert.default {
+    background-color: #FFF2BF;
+}
+
+.form-new-expert.mentor {
+    background-color: #ed7e9b;
 }
 
 .form-top {
@@ -159,6 +192,14 @@ input[type="number"] {
     display: flex;
     position: relative;
     text-align: left;
+}
+
+.card.default {
+    background-color: #FFF2BF;
+}
+
+.card.mentor {
+    background-color: #ed7e9b;
 }
 
 .card-content-2 {

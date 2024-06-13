@@ -11,8 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Expert', function (Blueprint $table) {
+        Schema::create('expert', function (Blueprint $table) {
             $table->id('Expert_ID');
+
+            $table->unsignedBigInteger('Platinum_ID');
+ 
+            $table->foreign('Platinum_ID')->references('Platinum_ID')->on('platinum')->constrained()
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
             $table->string('Expert_Name');
             $table->string('Expert_Gender');
             $table->string('Expert_University');
@@ -28,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Expert');
+        Schema::dropIfExists('expert');
     }
 };
