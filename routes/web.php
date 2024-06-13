@@ -64,54 +64,8 @@ Route::get('/PublicationAll/SearchPublication', [PublicationController::class, '
 
 
 //MODULE 4 - MUHAMAD SYARIFUDIN BIN MOHD AZON (CB22126)
-// Route::get('/AddDraftThesisFeedback', [ProgressMonitorController::class, 'AddDraftThesisFeedback'] )->name('CRMPprogressMonitor.AddDraftThesisFeedback');
-// Route::get('/AddWeeklyFocusFeedback', [ProgressMonitorController::class, 'AddWeeklyFocusFeedback'] )->name('CRMPprogressMonitor.AddWeeklyFocusFeedback');
-// Route::get('/ViewPlatinumList', [ProgressMonitorController::class, 'ViewPlatinumList'] )->name('CRMPprogressMonitor.ViewPlatinumList');
-// Route::get('/CRMPprofile', [ProgressMonitorController::class, 'CRMPprofile'] )->name('CRMPprogressMonitor.CRMPprofile');
-// Route::get('/AssignCRMP', [ProgressMonitorController::class, 'AssignCRMP'] )->name('ManageCRMPplatinum.AssignCRMP');
-// Route::get('/SearchPlatinum', [ProgressMonitorController::class, 'SearchPlatinum'] )->name('ManageCRMPplatinum.SearchPlatinum');
-// Route::get('/ManagePerformanceHome', [ProgressMonitorController::class, 'ManagePerformanceHome'] )->name('ManagePerformance.ManagePerformanceHome');
-// Route::get('/EditDraftThesis', [ProgressMonitorController::class, 'EditDraftThesis'] )->name('ManagePerformance.EditDraftThesis');
-// Route::get('/EditWeeklyFocus', [ProgressMonitorController::class, 'EditWeeklyFocus'] )->name('ManagePerformance.EditWeeklyFocus');
-// Route::get('/NewDraftThesisForm', [ProgressMonitorController::class, 'NewDraftThesisForm'] )->name('ManagePerformance.NewDraftThesisForm');
-// Route::get('/NewWeeklyFocusForm', [ProgressMonitorController::class, 'NewWeeklyFocusForm'] )->name('ManagePerformance.NewWeeklyFocusForm');
-// Route::get('/ViewDraftThesis', [ProgressMonitorController::class, 'ViewDraftThesis'] )->name('ManagePerformance.ViewDraftThesis');
-// Route::get('/ViewWeeklyFocus', [ProgressMonitorController::class, 'ViewWeeklyFocus'] )->name('ManagePerformance.ViewWeeklyFocus');
-// Route::get('/ViewFeedback', [ProgressMonitorController::class, 'ViewFeedback'] )->name('ManagePerformance.ViewFeedback');
-// Route::get('/Report', [ProgressMonitorController::class, 'Report'] )->name('ManagePerformance.Report');
-
-// Route::get('/weekly_focus', [WeeklyFocusController::class, 'view'])->name('ManagePerformance.weekly_focus');
-/*
-Route::get('/weekly_focus', [WeeklyFocusController::class, 'index'])->name('weekly_focus.index');
-Route::get('/weekly_focus/create', [WeeklyFocusController::class, 'create'])->name('weekly_focus.create');
-Route::post('/weekly_focus/store', [WeeklyFocusController::class, 'store'])->name('weekly_focus.store');
-
-Route::resource('draft_thesis', DraftThesisController::class);
-
-Route::get('/ManagePerformanceHome', function () {
-    return view('ManagePerformance.ManagePerformanceHome');
-})->name('ManagePerformanceHome');
-
-Route::get('/ViewWeeklyFocus', function () {
-    return view('ViewWeeklyFocus');
-})->name('ViewWeeklyFocus');
-
-Route::get('/DraftThesis', function () {
-    return view('draft_thesis');
-})->name('draft_thesis.create');
-
-Route::get('/ViewDraftThesis', function () {
-    return view('ViewDraftThesis');
-})->name('ViewDraftThesis');*/
 
 // Static views
-//Route::view('/NewWeeklyFocusForm', 'ManagePerformance.NewWeeklyFocusForm')->name('manage_performance.new_weekly_focus');
-//Route::view('/ViewWeeklyFocus', 'ManagePerformance.ViewWeeklyFocus')->name('manage_performance.view_weekly_focus');
-//Route::view('/EditWeeklyFocus', 'ManagePerformance.EditWeeklyFocus')->name('manage_performance.edit_weekly_focus');
-//Route::view('/NewDraftThesisForm', 'ManagePerformance.NewDraftThesisForm')->name('manage_performance.new_draft_thesis');
-//Route::view('/ViewDraftThesis', 'ManagePerformance.ViewDraftThesis')->name('manage_performance.view_draft_thesis');
-//Route::view('/ViewFeedback', 'ManagePerformance.ViewFeedback')->name('manage_performance.view_feedback');
-//Route::view('/Report', 'ManagePerformance.Report')->name('report.view');
 Route::view('/ViewPlatinumList', 'CRMPprogressMonitor.ViewPlatinumList')->name('crmp_progress_monitor.view_platinum_list');
 Route::view('/AddWeeklyFocusFeedback', 'CRMPprogressMonitor.AddWeeklyFocusFeedback')->name('crmp_progress_monitor.add_weekly_focus_feedback');
 Route::view('/AddDraftThesisFeedback', 'CRMPprogressMonitor.AddDraftThesisFeedback')->name('crmp_progress_monitor.add_draft_thesis_feedback');
