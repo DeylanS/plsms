@@ -41,53 +41,99 @@
 
         <div class="container">
         <div class="manage-crmp">
-            <h2>MANAGE CRMP</h2>
-            <div class="assign-header">
-                <div>NO</div>
-                <div>PLATINUM NAME</div>
-                <div>FIELD OF STUDY</div>
-                <div>CRMP</div>
-            </div>
+        <h2>MANAGE CRMP</h2>
+        <div class="assign-header">
+            <div>NO</div>
+            <div>PLATINUM NAME</div>
+            <div>FIELD OF STUDY</div>
+            <div>CRMP</div>
+        </div>
 
-            <!-- Example of a row -->
-            <div class="assign-item">
-                <div>1</div>
-                <div>Platinum Name</div>
-                <div>Field of Study</div>
-                <div>
-                    <select>
-                        <option value="crmp1">CRMP 1</option>
-                        <option value="crmp2">CRMP 2</option>
-                        <option value="crmp3">CRMP 3</option>
-                    </select>
-                </div>
+        <div class="assign-item">
+            <div>1</div>
+            <div>Alex Johnson</div>
+            <div>Data Science</div>
+            <div>
+                <select>
+                    <option value="crmp1">Mr. Zainal</option>
+                    <option value="crmp2">Ms. Sarah Tan</option>
+                    <option value="crmp3">Dr. John Lee</option>
+                </select>
             </div>
-
-            <!-- Repeat this block as necessary -->
-            <div class="assign-item">
-                <div>2</div>
-                <div>Platinum Name</div>
-                <div>Field of Study</div>
-                <div>
-                    <select>
-                        <option value="crmp1">CRMP 1</option>
-                        <option value="crmp2">CRMP 2</option>
-                        <option value="crmp3">CRMP 3</option>
-                    </select>
-                </div>
+        </div>
+        <div class="assign-item">
+            <div>2</div>
+            <div>Samantha Green</div>
+            <div>Biotechnology</div>
+            <div>
+                <select>
+                    <option value="crmp1">Mr. Zainal</option>
+                    <option value="crmp2">Ms. Sarah Tan</option>
+                    <option value="crmp3">Dr. John Lee</option>
+                </select>
             </div>
-            <!-- End of repeat block -->
-
+        </div>
+        <div class="assign-item">
+            <div>3</div>
+            <div>Michael Brown</div>
+            <div>Environmental Science</div>
+            <div>
+                <select>
+                    <option value="crmp1">Mr. Zainal</option>
+                    <option value="crmp2">Ms. Sarah Tan</option>
+                    <option value="crmp3">Dr. John Lee</option>
+                </select>
+            </div>
+        </div>
+        <div class="assign-item">
+            <div>4</div>
+            <div>Jessica Smith</div>
+            <div>Artificial Intelligence</div>
+            <div>
+                <select>
+                    <option value="crmp1">Mr. Zainal</option>
+                    <option value="crmp2">Ms. Sarah Tan</option>
+                    <option value="crmp3">Dr. John Lee</option>
+                </select>
+            </div>
+        </div>
+        <div class="assign-item">
+            <div>5</div>
+            <div>David Wilson</div>
+            <div>Cognitive Neuroscience</div>
+            <div>
+                <select>
+                    <option value="crmp1">Mr. Zainal</option>
+                    <option value="crmp2">Ms. Sarah Tan</option>
+                    <option value="crmp3">Dr. John Lee</option>
+                </select>
+            </div>
+        </div>
+        <div class="assign-item">
+            <div>6</div>
+            <div>Olivia Martinez</div>
+            <div>Quantum Computing</div>
+            <div>
+                <select>
+                    <option value="crmp1">Mr. Zainal</option>
+                    <option value="crmp2">Ms. Sarah Tan</option>
+                    <option value="crmp3">Dr. John Lee</option>
+                </select>
+            </div>
+        </div>
             <button class="btn-assign">Assign to Platinum</button>
         </div>
         </div>
-
 
         <style>
         .btn{
             background-color: #33de76;
         }
 
+        .side-nav .side-nav-link:hover {
+            text-decoration: underline;
+        }
+        
         .header{
             background-color: #3da867;
         }

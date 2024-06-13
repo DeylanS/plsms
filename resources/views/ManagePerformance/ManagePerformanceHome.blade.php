@@ -25,22 +25,22 @@
         </div>
         <div class="nav-expert-domain">
             <p class="menu-header"><strong> EXPERT DOMAIN </strong></p>
-            <p><a class="side-nav-link" href="../NewExpertForm">NEW EXPERT</a></p>
-            <p><a class="side-nav-link" href="../ViewOwnExpertList">LIST OWN EXPERT</a></p>
-            <p><a class="side-nav-link" href="../ViewAllExpertList">LIST ALL EXPERT</a></p>
-            <p><a class="side-nav-link" href="../ViewReportOfExpert">REPORT</a></p>
+            <p><a class="side-nav-link" href="{{ route('ExpertPersonal.NewExpertForm') }}">NEW EXPERT</a> </p>
+            <p><a class="side-nav-link" href="{{ route('ExpertPersonal.ViewOwnExpertList') }}">LIST OWN EXPERT</a></p>
+            <p><a class="side-nav-link" href="{{ route('ExpertAll.ViewAllExpertList') }}">LIST ALL EXPERT</a></p>
+            <p><a class="side-nav-link" href="{{ route('ExpertAll.ViewReportOfExpert') }}">REPORT</a></p>
         </div>
         <div class="nav-expert-domain">
             <p class="menu-header"><strong> PUBLICATION </strong></p>
-            <p><a class="side-nav-link" href="#">NEW PUBLICATION</a></p> 
-            <p><a class="side-nav-link" href="#">LIST OWN PUBLICATION</a></p>
-            <p><a class="side-nav-link" href="#">LIST ALL PUBLICATION</a></p>
+            <p><a class="side-nav-link" href="{{ route('PublicationPersonal.NewPublicationForm') }}">NEW PUBLICATION</a></p> 
+            <p><a class="side-nav-link" href="{{ route('PublicationPersonal.ViewOwnPublicationList') }}">LIST OWN PUBLICATION</a></p>
+            <p><a class="side-nav-link" href="{{ route('PublicationAll.ViewPublicationList') }}">LIST ALL PUBLICATION</a></p>
         </div>
         <div class="nav-progress-monitor">
             <p class="menu-header"><strong> PROGRESS MONITORING </strong></p>
-            <p><a class="side-nav-link" href="../CRMPprofile">CRMP PROFILE</a> </p>
-            <p><a class="side-nav-link" href="../ManagePerformanceHome">MANAGE PERFORMANCE</a></p>
-            <p><a class="side-nav-link" href="../Report">REPORT</a></p>
+            <p><a class="side-nav-link" href="{{ route('crmp_profile.index') }}">CRMP PROFILE</a></p>
+            <p><a class="side-nav-link" href="{{ route('manage_performance.home') }}">MANAGE PERFORMANCE</a></p>
+            <p><a class="side-nav-link" href="{{ route('report.generate') }}">REPORT</a></p>
         </div>
 
         <button type="button" name="logout" id="logout" class="btn btn-logout btn-lg"> LOG OUT </button>

@@ -13,8 +13,8 @@
         }
         .content {
             max-width: 1000px;
-            margin: 20px auto; /* Center the content horizontally */
-            margin-left: 200px; /* Adjusted margin to move more to the right */
+            margin: 20px auto;
+            margin-left: 300px; /* Adjusted margin to move more to the right */
             padding: 20px;
             border-radius: 8px;
         }
@@ -32,7 +32,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow for table */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         table, th, td {
             border: 1px solid #ddd;
@@ -42,21 +42,21 @@
             text-align: left;
         }
         th {
-            background-color: #ffc107; /* Light orange for header */
+            background-color: #ffc107;
             color: #fff;
             font-weight: bold;
         }
         tr:nth-child(even) {
-            background-color: #fff3cd; /* Lightest orange for alternate rows */
+            background-color: #fff3cd;
         }
         tr:hover {
-            background-color: #ffeeba; /* Slightly darker yellow on hover */
+            background-color: #ffeeba;
         }
         .action-buttons {
             display: flex;
             gap: 5px;
         }
-        .edit-btn, .delete-button {
+        .edit-btn, .delete-button, .add-btn {
             background-color: #007bff;
             color: white;
             padding: 6px 12px;
@@ -70,7 +70,12 @@
         .delete-button {
             background-color: #dc3545;
         }
-        .edit-btn:hover, .delete-button:hover {
+        .add-btn {
+            background-color: #28a745;
+            margin-bottom: 20px; /* Add space below the button */
+            display: inline-block;
+        }
+        .edit-btn:hover, .delete-button:hover, .add-btn:hover {
             opacity: 0.9;
         }
         form {
@@ -84,6 +89,7 @@
 @section('content')
 <div class="content">
     <h4 class="page-title">View Weekly Focus</h4>
+    <a href="{{ route('weekly_focus.create') }}" class="add-btn">Add Weekly Focus</a>
     @if ($weeklyFocuses->isEmpty())
         <p>No weekly focus items found.</p>
     @else

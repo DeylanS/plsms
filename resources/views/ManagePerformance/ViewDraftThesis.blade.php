@@ -7,11 +7,16 @@
     <style>
         .content {
             text-align: center;
+            margin: 20px 0;
         }
         .list-container {
             overflow-x: auto;
             margin: 0 auto;
             width: 90%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
         }
         table {
             border-collapse: collapse;
@@ -20,11 +25,51 @@
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 6px;
+            padding: 10px;
             text-align: left;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .page-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .btn {
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn-add {
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+        }
+        .btn-delete {
+            background-color: #dc3545;
+            color: white;
+        }
+        .btn-delete:hover, .btn-add:hover {
+            opacity: 0.8;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
         }
     </style>
 </head>
@@ -41,8 +86,7 @@
             </div>
         @endif
         <a href="{{ route('draft_thesis.create') }}" class="btn btn-add">Add New Draft Thesis</a>
-        <br>
-        <br>
+        <br><br>
         <table>
             <thead>
                 <tr>
@@ -53,7 +97,8 @@
                     <th>Complete Date</th>
                     <th>Pages Number</th>
                     <th>DDC</th>
-                    <th>Preparation Days</th> <!-- Add this column -->
+                    <th>Preparation Days</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,7 +111,7 @@
                         <td>{{ $draftThesis->dt_complete_date }}</td>
                         <td>{{ $draftThesis->dt_pages_number }}</td>
                         <td>{{ $draftThesis->dt_ddc }}</td>
-                        <td>{{ $draftThesis->dt_prep_days }}</td> <!-- Display preparation days -->
+                        <td>{{ $draftThesis->dt_prep_days }}</td>
                         <td>
                             <form action="{{ route('draft_thesis.destroy', $draftThesis->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this draft thesis?')">
                                 @csrf

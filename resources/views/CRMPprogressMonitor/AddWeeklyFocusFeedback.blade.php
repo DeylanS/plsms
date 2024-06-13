@@ -52,6 +52,10 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .side-nav .side-nav-link:hover {
+            text-decoration: underline;
+        }
+
         .list-container {
             overflow-x: auto; /* Add horizontal scroll if needed */
         }
@@ -173,12 +177,44 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>17/6/2024</td>
-                        <td>23/6/2024</td>
-                        <td>Focus</td>
-                        <td>Admin</td>
-                        <td>Social</td>
-                        <td>Recovery</td>
+                        <td>2024-06-13</td>
+                        <td>2024-06-15</td>
+                        <td>WIP Chapter 1</td>
+                        <td>Quiz BCS3233</td>
+                        <td>Telefon ayah</td>
+                        <td>Baca Al-Quran setiap hari</td>
+                        <td>
+                            <form method="POST" action="">
+                                @csrf
+                                <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br>
+                                <input type="submit" name="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2024-06-17</td>
+                        <td>2024-06-22</td>
+                        <td>WIP Chapter 2</td>
+                        <td>Assesstment Psychology</td>
+                        <td>Update LinkedIn</td>
+                        <td>Tidur 8 Jam sehari</td>
+                        <td>
+                            <form method="POST" action="">
+                                @csrf
+                                <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br>
+                                <input type="submit" name="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2024-06-23</td>
+                        <td>2024-06-26</td>
+                        <td>Study Web Eng</td>
+                        <td>Study Week</td>
+                        <td>Hantar Duit ke kampung</td>
+                        <td>Selawat 1000x</td>
                         <td>
                             <form method="POST" action="">
                                 @csrf

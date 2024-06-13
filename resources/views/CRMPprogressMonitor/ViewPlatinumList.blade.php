@@ -33,6 +33,10 @@
             color: white;
         }
 
+        .side-nav .side-nav-link:hover {
+            text-decoration: underline;
+        }
+
         .side-nav {
             width: 200px;
             padding: 20px;
@@ -46,7 +50,7 @@
             color: white;
             text-decoration: none;
         }
-        
+
         .container {
             margin: 20px auto;
             margin-left: 500px; /* Adjusted for more space to the right */
@@ -82,6 +86,10 @@
 
         .profile-info {
             flex-grow: 1;
+        }
+
+        .profile-info p {
+            margin: 5px 0; /* Added margin for better spacing between lines */
         }
 
         .profile-actions {
@@ -138,9 +146,9 @@
             <div class="profile-entry">
                 <img class="profile-pic" src="https://via.placeholder.com/60" alt="Profile Picture">
                 <div class="profile-info">
-                    <p><strong>Name:</strong> John Doe</p>
-                    <p><strong>Platinum Package:</strong> Premium</p>
-                    <p><strong>Institute:</strong> Harvard University</p>
+                    <p><strong>Name:</strong><br>Abdul</p>
+                    <p><strong>Platinum Package:</strong><br>Elite</p>
+                    <p><strong>Institute:</strong><br>Universiti Malaysia Pahang</p>
                 </div>
                 <div class="profile-actions">
                     <button class="btn btn-focus"><a href="/AddWeeklyFocusFeedback">Weekly Focus</a></button>
@@ -150,9 +158,9 @@
             <div class="profile-entry">
                 <img class="profile-pic" src="https://via.placeholder.com/60" alt="Profile Picture">
                 <div class="profile-info">
-                    <p><strong>Name:</strong> John Doe</p>
-                    <p><strong>Platinum Package:</strong> Premium</p>
-                    <p><strong>Institute:</strong> Harvard University</p>
+                    <p><strong>Name:</strong><br>Syahilla Binti Awang</p>
+                    <p><strong>Platinum Package:</strong><br>Elite</p>
+                    <p><strong>Institute:</strong><br>Universiti Teknologi Malaysia</p>
                 </div>
                 <div class="profile-actions">
                     <button class="btn btn-focus"><a href="/AddWeeklyFocusFeedback">Weekly Focus</a></button>
@@ -162,9 +170,9 @@
             <div class="profile-entry">
                 <img class="profile-pic" src="https://via.placeholder.com/60" alt="Profile Picture">
                 <div class="profile-info">
-                    <p><strong>Name:</strong> John Doe</p>
-                    <p><strong>Platinum Package:</strong> Premium</p>
-                    <p><strong>Institute:</strong> Harvard University</p>
+                    <p><strong>Name:</strong><br>Anwar</p>
+                    <p><strong>Platinum Package:</strong><br>Premier</p>
+                    <p><strong>Institute:</strong><br>Universiti Malaysia Kelantan</p>
                 </div>
                 <div class="profile-actions">
                     <button class="btn btn-focus"><a href="/AddWeeklyFocusFeedback">Weekly Focus</a></button>

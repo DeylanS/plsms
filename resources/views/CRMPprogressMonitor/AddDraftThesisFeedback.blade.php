@@ -42,6 +42,10 @@
             height: 100%;
         }
 
+        .side-nav .side-nav-link:hover {
+            text-decoration: underline;
+        }
+
         .container {
             margin: 20px auto;
             margin-left: 350px; /* Adjusted for centering with side-nav */
@@ -152,41 +156,110 @@
     <div class="container">
         <h4 class="page-title">View Draft Thesis</h4>
         <div class="list-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Draft Number</th>
-                        <th>Start Date</th>
-                        <th>Complete Date</th>
-                        <th>Pages Number</th>
-                        <th>DDC</th>
-                        <th>Preparation Days</th>
-                        <th>Feedback</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Machine Learning</td>
-                        <td>2</td>
-                        <td>3/6/2024</td>
-                        <td>1/7/2024</td>
-                        <td>67</td>
-                        <td>28</td>
-                        <td>28</td>
-                        <td>
-                            <form method="POST" action="">
-                                @csrf
-                                <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br>
-                                <input type="submit" name="submit" value="Submit">
-                            </form>
-                        </td>
-                    </tr>
-                    <!-- More table rows can be added here -->
-                </tbody>
-            </table>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Draft Number</th>
+            <th>Start Date</th>
+            <th>Complete Date</th>
+            <th>Pages Number</th>
+            <th>DDC</th>
+            <th>Preparation Days</th>
+            <th>Feedback</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Web-Based Learning Management System</td>
+            <td>1</td>
+            <td>2024-06-13</td>
+            <td>2024-06-19</td>
+            <td>5</td>
+            <td>1</td>
+            <td>0</td>
+            <td>
+                <form method="POST" action="">
+                    @csrf
+                    <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br>
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Web-Based Learning Management System</td>
+            <td>2</td>
+            <td>2024-06-21</td>
+            <td>2024-06-26</td>
+            <td>7</td>
+            <td>2</td>
+            <td>6</td>
+            <td>
+                <form method="POST" action="">
+                    @csrf
+                    <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br>
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Web-Based Learning Management System</td>
+            <td>3</td>
+            <td>2024-06-28</td>
+            <td>2024-07-01</td>
+            <td>7</td>
+            <td>3</td>
+            <td>4</td>
+            <td>
+                <form method="POST" action="">
+                    @csrf
+                    <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br>
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Web-Based Learning Management System</td>
+            <td>4</td>
+            <td>2024-07-04</td>
+            <td>2024-07-15</td>
+            <td>17</td>
+            <td>4</td>
+            <td>12</td>
+            <td>
+                <form method="POST" action="">
+                    @csrf
+                    <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br>
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Web-Based Learning Management System</td>
+            <td>5</td>
+            <td>2024-07-17</td>
+            <td>2024-07-31</td>
+            <td>14</td>
+            <td>5</td>
+            <td>14</td>
+            <td>
+                <form method="POST" action="">
+                    @csrf
+                    <input type="text" name="dt_feedback" placeholder="Enter Feedback"> <br>
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
         </div>
     </div>
 </body>
