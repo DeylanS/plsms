@@ -84,6 +84,11 @@
 <div class="center">
     <div class="container">
         <h1 style="text-align: center;">All Publications</h1>
+        <form action="{{ route('PublicationAll.SearchPublications') }}" method="GET" style="text-align: center;">
+            <input type="text" name="search" placeholder="Search by title..." value="{{ request('search') }}" style="padding: 10px; width: 50%; border-radius: 5px; border: 1px solid #ddd;">
+            <button type="submit" class="btns">Search</button>
+        </form>
+        <br>
         <a class="btns" href="#" onclick="confirmMentor()">View Report</a>
         
         <br><br>

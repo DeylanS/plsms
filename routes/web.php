@@ -54,6 +54,9 @@ Route::put('/PublicationPersonal/update/{id}', [PublicationController::class, 'u
 Route::get('/PublicationAll/ViewPublicationDetails/{id}', [PublicationController::class, 'showPublicationDetails'])->name('PublicationAll.ViewPublicationDetails');
 Route::get('/PublicationAll/ViewReportOfPublication', [PublicationController::class, 'generateReport'])->name('PublicationAll.ViewReportOfPublication');
 Route::delete('/PublicationPersonal/DeletePublication/{id}', [PublicationController::class, 'destroy'])->name('PublicationPersonal.DeletePublication');
+Route::get('/PublicationAll/SearchPublication', [PublicationController::class, 'searchPublications'])->name('PublicationAll.SearchPublications');
+
+
 
 
 
