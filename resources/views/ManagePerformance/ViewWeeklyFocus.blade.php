@@ -7,17 +7,23 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
         }
         .content {
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 20px auto; /* Center the content horizontally */
+            margin-left: 200px; /* Adjusted margin to move more to the right */
+            padding: 20px;
+            border-radius: 8px;
         }
         .page-title {
             text-align: center;
             margin-bottom: 20px;
             font-size: 24px;
             font-weight: bold;
+            color: #333;
         }
         .list-container {
             overflow-x: auto;
@@ -26,23 +32,29 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow for table */
         }
         table, th, td {
             border: 1px solid #ddd;
         }
         th, td {
-            padding: 5px;
+            padding: 10px;
             text-align: left;
         }
         th {
-            background-color: #f4f4f4;
+            background-color: #ffc107; /* Light orange for header */
+            color: #fff;
+            font-weight: bold;
         }
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #fff3cd; /* Lightest orange for alternate rows */
+        }
+        tr:hover {
+            background-color: #ffeeba; /* Slightly darker yellow on hover */
         }
         .action-buttons {
             display: flex;
-            gap: 10px;
+            gap: 5px;
         }
         .edit-btn, .delete-button {
             background-color: #007bff;
@@ -52,15 +64,14 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            text-align: center;
+            font-size: 14px;
         }
         .delete-button {
             background-color: #dc3545;
         }
         .edit-btn:hover, .delete-button:hover {
-            opacity: 0.8;
-        }
-        .delete-button {
-            padding: 6px 10px;
+            opacity: 0.9;
         }
         form {
             display: inline;
@@ -105,7 +116,7 @@
                             <td>
                                 <div class="action-buttons">
                                     <a href="{{ route('weekly_focus.edit', ['id' => $weeklyFocus->WF_ID]) }}" class="edit-btn">Edit</a>
-                                    <form action="{{ route('weekly_focus.destroy', ['id' => $weeklyFocus->WF_ID]) }}" method="POST" style="display:inline;">
+                                    <form action="{{ route('weekly_focus.destroy', ['id' => $weeklyFocus->WF_ID]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="delete-button">Delete</button>
@@ -120,6 +131,5 @@
     @endif
 </div>
 @endsection
-
 </body>
 </html>
